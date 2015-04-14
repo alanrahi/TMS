@@ -9,6 +9,7 @@
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <!-- load our scripts -->
   <script type="text/javascript" src="js/task_router.js"></script>
   <script type="text/javascript" src="js/models/task_model.js"></script>
@@ -62,11 +63,15 @@
 
   <!-- the row template, renders once for each item in the index -->
   <script type="text/template" id="rowTemplate">
+  
       <h1 class="rotate"><%= title %></h1>
       <h2 class="rotate"><%= duration %></h2>
       <div class="instances"><%= instance %></div>
       <div class="task-buttons">
-	  <a href="#task/<%= id %>/edit" class="task-title btn btn-danger btn-small">edit</a>
+	    <a href="#" class="add task-title btn btn-danger btn-small">+</a>
+      <a href="#" class="add task-title btn btn-danger btn-small">-</a>
+      <br><br><br>
+	    <a href="#task/<%= id %>/edit" class="task-title btn btn-danger btn-small">edit</a>
       <a href="#" class="delete btn btn-danger btn-small">delete</a>
 	  </div>
   </script>
@@ -82,10 +87,10 @@
     // we manually pass in the initial data, but this would be called with a collection.fetch() normally
     router.tasks.reset([
       {
-        "title": "Example Task 1",
+        "title": "Running",
         "id": "45",
         "duration": "30",
-        "instance": [0,1]
+        "instance": [0,1,2,3,4,5]
       },
       {
         "title": "Example Task 2",
