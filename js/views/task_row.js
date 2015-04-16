@@ -5,8 +5,10 @@ APP.TaskRowView = Backbone.View.extend({
   tagName: "div",
   // functions to fire on events
   events: {
-    "click a.delete": "destroy"
+    "click a.delete": "destroy",
+	  "click a.add": "add"
   },
+
 
   // the constructor
   initialize: function (options) {
@@ -30,5 +32,10 @@ APP.TaskRowView = Backbone.View.extend({
     // which would make a DELETE call to the server with the id of the item
     this.tasks.remove(this.task);
     this.$el.remove();
+  },
+  
+  add: function (event) {
+	alert("You clicked me");  
+    return this;
   }
 });
