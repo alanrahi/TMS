@@ -1,5 +1,5 @@
-
 "use strict";
+
 APP.TaskIndexView = Backbone.View.extend({
   // the constructor
   initialize: function (options) {
