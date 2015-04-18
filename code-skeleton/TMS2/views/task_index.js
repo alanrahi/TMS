@@ -1,12 +1,16 @@
-"use strict";
+//"use strict";
 
-APP.TaskIndexView = Backbone.View.extend(
+/*APP.TaskIndexView = Backbone.View.extend(
 
       
   {
       
           // the constructor
           initialize: 
+
+          
+      ,
+
 
           // populate the html to the dom
           render: 

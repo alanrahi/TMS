@@ -1,6 +1,6 @@
-"use strict";
+//"use strict";
 
-APP.TaskRowView = Backbone.View.extend(
+/*APP.TaskRowView = Backbone.View.extend(
 
 
   {

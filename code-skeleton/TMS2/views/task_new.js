@@ -1,7 +1,7 @@
 "use strict";
 
 
-APP.TaskNewView = Backbone.View.extend(
+/*APP.TaskNewView = Backbone.View.extend(
 
   {
           
