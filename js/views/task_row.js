@@ -37,9 +37,9 @@ APP.TaskRowView = Backbone.View.extend({
   
   add: function (event) {
 	 
-            
+              
       
-            $('.instances').append('<div class ="instance-div"> xxxx </div>');
+            this.$('.instances').append('<div class ="instance-div"> xxxx </div>');
             console.log(this);
             $(this).addClass('btn');
           
