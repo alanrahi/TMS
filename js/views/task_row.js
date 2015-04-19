@@ -6,8 +6,9 @@ APP.TaskRowView = Backbone.View.extend({
   // functions to fire on events
   events: {
     "click a.delete": "destroy",
-	  "click a.add": "add"
-  },
+    "click a.add": "add",
+    "click a.petitedelete": "remove"
+	 },
 
 
   // the constructor
@@ -35,7 +36,28 @@ APP.TaskRowView = Backbone.View.extend({
   },
   
   add: function (event) {
-	alert("You clicked me");  
-    return this;
+	 
+            
+      
+            $('.instances').append('<div class ="instance-div"> xxxx </div>');
+            console.log(this);
+            $(this).addClass('btn');
+          
+
+               
+            //figure which add button was clicked
+
+            //$('.instances').append('<div> THING </div>');
+
+               
+
+             
+  },
+
+  remove: function (event) {
+            
+            
+            $('.instances > div:first-child').remove();
+            console.log(this);
   }
 });

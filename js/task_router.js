@@ -14,8 +14,12 @@ APP.TaskRouter = Backbone.Router.extend({
   },
 
   create: function () {
+    
     this.currentView = new APP.TaskNewView({
-      tasks: this.tasks, task: new APP.TaskModel()
+      
+      tasks: this.tasks, 
+      task: new APP.TaskModel()
+    
     });
 
     $('#primary-content').html(this.currentView.render().el);
