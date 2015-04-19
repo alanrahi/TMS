@@ -116,5 +116,25 @@
     
   });
 </script>
+
+<script>
+
+
+//Adds class 'divWidthChanger' to first-child div 
+$('#Tasks div:first-child').addClass("divWidthChanger");
+
+//Count the number of divs with the class 'divWidthChanger'
+$()
+
+//Take total number of divs and divide the sum by 100%
+
+//Add result to the css of all the divs with 'divWidthChanger'
+
+//Color generator 
+$(".divWidthChanger").each(function() {
+   var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+   $(this).css("background-color", hue);
+});
+</script>
 </body>
 </html>
