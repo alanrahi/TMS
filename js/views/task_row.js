@@ -57,7 +57,7 @@ APP.TaskRowView = Backbone.View.extend({
   remove: function (event) {
             
             
-            $('.instances > div:first-child').remove();
+            this.$('.instances > div:first-child').remove();
             console.log(this);
   }
 });
