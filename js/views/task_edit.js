@@ -20,7 +20,7 @@ APP.TaskEditView = Backbone.View.extend({
     this.task.set({
       title: this.$el.find('input[name=title]').val(),
       duration: this.$el.find('input[name=duration]').val(),
-      instance: this.$el.find('textarea[name=instance]').val()
+      //instance: this.$el.find('input[name=instance]').val()
     });
     // we would save to the server here with
     // this.task.save();

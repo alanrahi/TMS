@@ -4,8 +4,9 @@ APP.TaskModel = Backbone.Model.extend({
   // you can set any defaults you would like here
   defaults: {
     title: "",
-    instance: "",
-    duration: ""
+    duration: "",
+    instance: ""
+    
   },
 
   validate: function (attrs) {
