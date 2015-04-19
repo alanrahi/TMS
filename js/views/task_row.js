@@ -6,7 +6,7 @@ APP.TaskRowView = Backbone.View.extend({
   // functions to fire on events
   events: {
     "click a.delete": "destroy",
-	  "click a.add": "add"
+	  //"click a.add": "add"
   },
 
 
@@ -20,8 +20,19 @@ APP.TaskRowView = Backbone.View.extend({
   // populate the html to the dom
   render: function () {
     this.$el.html(_.template($('#rowTemplate').html(), this.task.toJSON()));
+
     return this;
   },
+
+//   this.task.collection.each(function(log){
+//     console.log(log);
+//     var thing_type = this.model.get("id"),
+//     thing_other = this.model.get("instance");
+
+//     console.log(paintThing);
+//     console.log(thing_type);
+//     console.log(thing_other);
+// });
 
   // delete the model
   destroy: function (event) {
@@ -34,8 +45,8 @@ APP.TaskRowView = Backbone.View.extend({
     this.$el.remove();
   },
   
-  add: function (event) {
-	alert("You clicked me");  
-    return this;
-  }
+ //  add: function (event) {
+	// alert("You clicked me");  
+ //    return this;
+ //  }
 });
