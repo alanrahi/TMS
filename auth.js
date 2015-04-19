@@ -62,7 +62,30 @@ function authenticate(name, password, callback) {
 			callback(new Error("user not found"));
 		});
 }
+function createUser (name, password) {
+		var user = {
+			name: name
+		};
+		// Encode the password with a salt and hash,
+		//  and store them with the name in object user:
+		pwd.hash(password, function (err, salt, hash) {
+			if (err) {
+				throw err
+			}
+			user.salt = salt;
+			user.hash = String(hash);
 
+			// Send them to the database collection 'users'
+			// with user name as a retrieval key:
+			db.put(collectionName, user.name, user)
+				.then(function (result) {
+					console.log("created user ", user.name)
+				})
+				.fail(function (err) {
+					console.error(err);
+				})
+		})
+	}
 // ----- routes -----
 
 router.addRoute("/", {
@@ -149,7 +172,7 @@ router.addRoute("/register", {
 			}
 
 			// form body is parsed; extract username and password, then autherticate:
-			authenticate(body.username, body.password, function (err, user) {
+			createUser(body.username, body.password, function (err, user) {
 				// This function is the callback to which authenticate will provide
 				// either an err OR a user
 				if (err || !user) { //problem
@@ -158,7 +181,7 @@ router.addRoute("/register", {
 					//sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
 
 				} else { //successful authentication!
-					console.log("authenticated user "+user.name)
+					console.log("create-user "+user.name)
 					// respond with the protected content page, plus a welcome message:
 					sendHtml(req, res, templates.index({message: "Welcome, "+user.name+"!"}));
 				}
