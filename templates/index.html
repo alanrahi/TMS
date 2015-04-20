@@ -24,8 +24,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12" id="primary-content">
-
-      <p> Chocolate </p>
         <!-- the container that gets populated with the index -->
       </div>
     </div>
@@ -45,7 +43,10 @@
           <label>Default Duration:</label>
           <input type="text" class="form-control" name="duration" value="<%= duration %>" />
         </div>
-        
+        <div class="form-group">
+          <label>Instance:</label>
+          <input type="text" class="form-control" name="instance" value="<%= instance %>" />
+        </div>
         <button class="save btn btn-large btn-info" type="submit">Save</button>
         <a href="#tasks/index" class="btn btn-large">Cancel</a>
       </form>
@@ -65,11 +66,11 @@
   
       <h1 class="rotate"><%= title %></h1>
       <h2 class="rotate"><%= duration %></h2>
-      <div class="instances">instances stack here</div>
+      <div class="instances"><%= instance %></div>
       <div class="task-buttons">
 	    <a href="#" class="add task-title btn btn-danger btn-small">+</a>
-      <a href="#" class="petitedelete task-title btn btn-danger btn-small">-</a>
-      <bootstrap><br><br>
+      <a href="#" class="add task-title btn btn-danger btn-small">-</a>
+      <br><br><br>
 	    <a href="#task/<%= id %>/edit" class="task-title btn btn-danger btn-small">edit</a>
       <a href="#" class="delete btn btn-danger btn-small">delete</a>
 	  </div>
@@ -83,10 +84,6 @@
       tasks: new APP.TaskCollection()
     });
     // we manually pass in the initial data, but this would be called with a collection.fetch() normally
-
-    //Note that fetch should not be used to populate collections on page load — all models needed at load time should already be bootstrapped in to place. fetch is intended for lazily-loading models for interfaces that are not needed immediately: for example, documents with collections of notes that may be toggled open and closed. http://backbonejs.org/#Collection-fetch//
-
-
     router.tasks.reset([
       {
         "title": "Running",

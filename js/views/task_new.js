@@ -11,6 +11,7 @@ APP.TaskNewView = Backbone.View.extend({
     this.task  = options.task;
     this.tasks = options.tasks;
     this.task.bind('invalid', this.showErrors, this);
+    console.log(this);
   },
 
   showErrors: function (task, errors) {
@@ -30,7 +31,7 @@ APP.TaskNewView = Backbone.View.extend({
     this.task.set({
       title: this.$el.find('input[name=title]').val(),
       duration: this.$el.find('input[name=duration]').val(),
-      instance: this.$el.find('input[name=instance]').val(),
+      //instance: this.$el.find('input[name=instance]').val(),
       // just setting random number for id would set as primary key from server
       id: Math.floor(Math.random() * 100) + 1
     });
@@ -39,6 +40,7 @@ APP.TaskNewView = Backbone.View.extend({
       this.tasks.add(this.task);
       // this.task.save();
       // redirect back to the index
+      console.log(this);
       window.location.hash = "tasks/index";
     }
   },
