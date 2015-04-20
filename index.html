@@ -14,7 +14,7 @@
   <script type="text/javascript" src="js/task_router.js"></script>
   <script type="text/javascript" src="js/models/task_model.js"></script>
   <script type="text/javascript" src="js/views/task_index.js"></script>
-  <script type="text/javascript" src="js/views/task_row.js"></script>
+  <script type="text/javascript" src="js/views/task_column.js"></script>
   <script type="text/javascript" src="js/views/task_new.js"></script>
   <script type="text/javascript" src="js/views/task_edit.js"></script>
   <!-- <script type="text/javascript" src="js/views/task_show.js"></script>-->
@@ -59,7 +59,7 @@
 
   <!-- the row template, renders once for each item in the index -->
   <script type="text/template" id="rowTemplate">
-      <div class"single-task">  
+     
         <h1 class="rotate"><%= title %></h1>
         <h2 class="rotate"><%= duration %></h2>
         <div class="instances"><%= instance %></div>
@@ -69,7 +69,7 @@
         <br><br><br>
   	    <a href="#task/<%= id %>/edit" class="task-title btn btn-danger btn-small">edit</a>
         <a href="#" class="delete btn btn-danger btn-small">delete</a>
-  	  </div>
+  	
     </div>
   </script>
 
@@ -108,23 +108,19 @@
     // now that everyting is setup we tell backbone to watch the urls
     Backbone.history.start();
   </script>
-  <script>
-  $( document ).ready(function() {
-    click(function() {
-      alert("ugh");
-    });
-    
-  });
-</script>
 
 <script>
 
 
 //Adds class 'divWidthChanger' to first-child div 
-$('#Tasks div:first-child').addClass("divWidthChanger");
+function divCounterForWidth() {
+    $('#Tasks').children('div').addClass("divWidthChanger");
+    console.log("#Tasks");
+    var divCountForWidthChanger = ($("div.divWidthChanger").length) +1;
+    console.log("There are " + divCountForWidthChanger + " divs.");
+};
 
-//Count the number of divs with the class 'divWidthChanger'
-$()
+divCounterForWidth();
 
 //Take total number of divs and divide the sum by 100%
 

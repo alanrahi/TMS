@@ -40,12 +40,15 @@ APP.TaskNewView = Backbone.View.extend({
       // this.task.save();
       // redirect back to the index
       window.location.hash = "tasks/index";
+      var divCountForWidthChanger = divCountForWidthChanger++;
     }
   },
 
   // populate the html to the dom
   render: function () {
     this.$el.html(_.template($('#formTemplate').html(), this.task.toJSON()));
+    divCounterForWidth(); 
     return this;
   }
+
 });
