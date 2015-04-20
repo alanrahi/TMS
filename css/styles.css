@@ -1,0 +1,61 @@
+#Tasks div	{
+	  background-color: #E8DFDF;
+	  float: left;
+	  margin: 0 5%;
+}
+.task-title	{
+	display: block;
+}
+
+.delete	{
+	display: block;
+}
+
+.instances	{
+	display:block;
+	float:left;
+	margin: 0 5%;
+	background-color:#ccc; 
+	 
+}
+
+.task-buttons	{
+	float:left;
+	width:100%;
+}
+
+.task-buttons a	{
+	width:100px;
+}
+
+/*.rotate {
+/* Safari */
+/*-webkit-transform: rotate(-90deg);*/
+/* Firefox */
+/*-moz-transform: rotate(-90deg);*/
+/* IE */
+/*-ms-transform: rotate(-90deg);*/
+/* Opera */
+/*-o-transform: rotate(-90deg);*/
+/* Internet Explorer */
+/*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+/*}*/
+
+/**********************Login Page Styling**************************/
+
+.loginPage {
+	background-color: lightblue;
+}
+.loginSection {
+	text-align: center;
+	padding-top: 10%;
+}
+
+.regSection {
+	text-align: center;
+	padding-top: 10%;
+}
+
+.regPage {
+	background-color: pink;
+}

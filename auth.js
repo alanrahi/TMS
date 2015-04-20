@@ -3,12 +3,12 @@ var http = require("http");
 var st = require('st');
 var Router = require("routes-router");
 var router = Router();
-var fs = require('fs');
+//var fs = require('fs');
 
-//var config = require('./config'); //load the orchestrate key
-//var db = require('orchestrate')(config.dbKey); // use the key to connect to orch app
+var config = require('./config'); //load the orchestrate key
+var db = require('orchestrate')(config.dbKey); // use the key to connect to orch app
 // If you're offline, replace the db above with this volatile store:
-var db = require('./fake-db');
+//var db = require('./fake-db');
 
 
 // New components:
@@ -31,7 +31,7 @@ var pwd = require("pwd");
 // ----- Creating users -----
 //uncomment (and customize) to create a user:
 var createUser = require('./create-user')(db,"users");
-createUser("steve", "123"); 
+//createUser("steve", "123"); 
 //createUser("testuser","password");
 
 // ----- Authenticating users -----
@@ -62,6 +62,9 @@ function authenticate(name, password, callback) {
 			callback(new Error("user not found"));
 		});
 }
+
+//****************Create User Function**************
+
 function createUser (name, password) {
 		var user = {
 			name: name
@@ -86,6 +89,7 @@ function createUser (name, password) {
 				})
 		})
 	}
+
 // ----- routes -----
 
 router.addRoute("/", {
@@ -103,30 +107,6 @@ router.addRoute("/logout", {
 router.addRoute("/login", {
 	GET: function (req, res, opts) {
 		sendHtml(req, res, templates.login({ message: "Please log in"}));	
-	/*	sendHtml(req, res,'<h1>Login</h1>\
-			<div></div><form method="post" action="/login">\
-			<p><label>Username:</label>\
-			<input name="username" type="text"> </p>\
-			<p> <label>Password:</label>\
-          	<input name="password" type="password">\
-          	<!--input name="password" type="text"-->\
-        	</p>\
-        	<p>\
-          	<input value="Login" type="submit">\
-        	</p>\
-      		</form>\
-      		<a href="/logout">Log-Out</a>\
-			</form>');*/
-   /*fs.readFile('/login.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }) //.listen(8000);
-});*/
 	},
 	
 
@@ -145,7 +125,7 @@ router.addRoute("/login", {
 				if (err || !user) { //problem
 					console.log(err);
 					// respond with the login page again, plus a failure message:
-					//sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
+					sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
 
 				} else { //successful authentication!
 					console.log("authenticated user "+user.name)
@@ -157,13 +137,14 @@ router.addRoute("/login", {
 	}
 });
 
+//------ Register Route -----------/
 router.addRoute("/register", {
 	GET: function (req, res, opts) {
 		sendHtml(req, res, templates.register({ message: "Please Create User Account"}));	
 	},
 	
 
-	POST: function (req, res, opts) { //process login form...
+	POST: function (req, res, opts) { //process register form...
 
 		formBody(req, res, function (err, body) { // when form body is ready...
 			if (err) {
@@ -171,28 +152,29 @@ router.addRoute("/register", {
 				return console.log(err);
 			}
 
-			// form body is parsed; extract username and password, then autherticate:
+			// form body is parsed; extract username and password, 
+			// then create user account:
 			createUser(body.username, body.password, function (err, user) {
 				// This function is the callback to which authenticate will provide
 				// either an err OR a user
 				if (err || !user) { //problem
 					console.log(err);
 					// respond with the login page again, plus a fa ilure message:
-					//sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
+					sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
 
-				} else { //successful authentication!
-					console.log("create-user "+user.name)
+				} else { //successful register!
+					console.log("Created User: "+user.name)
 					// respond with the protected content page, plus a welcome message:
 					sendHtml(req, res, templates.index({message: "Welcome, "+user.name+"!"}));
 				}
-			})//authenticate
+			})
 		})//formBody
 	}
 });
 
-router.addRoute("/public/*", st({
-	path: __dirname + "/public",
-	url: "/public"
+router.addRoute("/*", st({
+	path: __dirname + "/",
+	url: "/"
 }));
 
 var server = http.createServer(router);

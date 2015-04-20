@@ -2,14 +2,15 @@
 <html lang="en">
 	<head>
 		<title>Register</title>
-		<link rel="stylesheet" href="public/css/style.css">
+		<link href="public/css/styles.css" media="all" rel="stylesheet" type="text/css" />
 
   </head>
-  <body>
-		<section class="panel">
-			<h1>Login</h1>
+  <body class='regPage'>
+		<section class="regSection">
+			<h1>Register</h1>
 				<div>{{message}}</div>
 				<form method="post" action="/register">
+				<br/>
 					<p>
 						<label>Username:</label>
 						<input name="username" type="text">
@@ -23,7 +24,7 @@
 					<input value="register" type="submit">
         </p>
       </form>
-      <a href="/logout">Log-Out</a>
+      
 
     </section>
   </body>
