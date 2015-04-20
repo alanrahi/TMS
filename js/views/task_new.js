@@ -11,6 +11,7 @@ APP.TaskNewView = Backbone.View.extend({
     this.task  = options.task;
     this.tasks = options.tasks;
     this.task.bind('invalid', this.showErrors, this);
+    console.log(this);
   },
 
   showErrors: function (task, errors) {
@@ -38,6 +39,7 @@ APP.TaskNewView = Backbone.View.extend({
       this.tasks.add(this.task);
       // this.task.save();
       // redirect back to the index
+      console.log(this);
       window.location.hash = "tasks/index";
       var divCountForWidthChanger = divCountForWidthChanger++;
     }

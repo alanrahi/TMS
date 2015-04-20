@@ -11,6 +11,7 @@ APP.TaskEditView = Backbone.View.extend({
     this.task  = options.task;
   },
 
+
   save: function (event) {
     // this keeps the form from submitting
     event.stopPropagation();
@@ -26,6 +27,7 @@ APP.TaskEditView = Backbone.View.extend({
     // this.task.save();
     // redirect back to the index
     window.location.hash = "tasks/index";
+
   },
 
   // populate the html to the dom

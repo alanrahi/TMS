@@ -1,33 +1,62 @@
-//"use strict";
+"use strict";
 
-/*APP.TaskIndexView = Backbone.View.extend(
+APP.TaskIndexView = Backbone.View.extend(
 
       
   {
       
           // the constructor
-          initialize: 
+          initialize: function(options) {
+
+            this.tasks = options.tasks;
+            this.tasks.bind('reset', this.addAll, this);
+
+          }
 
           
       ,
 
 
           // populate the html to the dom
-          render: 
+          render: function() {
+
+            this.$el.html($('#indexTemplate').html());
+            this.addOne();
+            return this;
+
+          }
          
 
       ,
 
 
-          addAll: 
-          // clear out the container each time you render index
-        
+          addAll: function() {
+          
+            // clear out the container each time you render index
+            this.$el.find('#Tasks').children().remove();
+            _.each(this.tasks.models, $.proxy(this, 'addOne'));
+          
+          }
 
       ,
 
 
-          addOne: 
+          addOne: function() {
+
+            var view = new APP.TaskRowView({
+              
+              tasks: this.tasks, 
+              task: task
+         
+             });
+    
+            this.$el.find("#Tasks").append(view.render().el);
+          
+          }
 
 
   });
+
+
+
 

@@ -17,16 +17,21 @@ APP.TaskIndexView = Backbone.View.extend({
 
   addAll: function () {
     // clear out the container each time you render index
-    this.$el.find('#Tasks').children().remove();
-    _.each(this.tasks.models, $.proxy(this, 'addOne'));
+             this.$el.find('#Tasks').children().remove();
+             _.each(this.tasks.models, $.proxy(this, 'addOne'));
   },
 
   addOne: function (task) {
-    var view = new APP.TaskRowView({
-      tasks: this.tasks, 
-      task: task
-    });
+    
+          var view = new APP.TaskRowView( {
+          tasks: this.tasks, 
+          task: task
+    
+        });
+    
     this.$el.find("#Tasks").append(view.render().el);
+  
   }
+
 });
 
