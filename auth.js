@@ -23,7 +23,7 @@ var sendHtml = require("send-data/html"); //may also need send-data/json
 var formBody = require("body/form");
 
 // Pre-compile all the templates in directory server-templates/templates
-var templates = require('./server-templates/compile-templates');
+var templates = require('./compile-templates');
 
 // Allow easy hashing and salting of passwords:
 var pwd = require("pwd");
@@ -165,7 +165,7 @@ router.addRoute("/register", {
 				} else { //successful register!
 					console.log("Created User: "+user.name)
 					// respond with the protected content page, plus a welcome message:
-					sendHtml(req, res, templates.index({message: "Welcome, "+user.name+"!"}));
+					sendHtml(req, res, templates.thankyou({message: "Thank You "+user.name+"!"}));
 				}
 			})
 		})//formBody
