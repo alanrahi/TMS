@@ -14,10 +14,10 @@
   <script type="text/javascript" src="js/task_router.js"></script>
   <script type="text/javascript" src="js/models/task_model.js"></script>
   <script type="text/javascript" src="js/views/task_index.js"></script>
-  <script type="text/javascript" src="js/views/task_row.js"></script>
+  <script type="text/javascript" src="js/views/task_column.js"></script>
   <script type="text/javascript" src="js/views/task_new.js"></script>
   <script type="text/javascript" src="js/views/task_edit.js"></script>
-  <script type="text/javascript" src="js/views/task_show.js"></script>
+  <!-- <script type="text/javascript" src="js/views/task_show.js"></script>-->
 </head>
 <body>
 
@@ -45,7 +45,7 @@
           <label>Default Duration:</label>
           <input type="text" class="form-control" name="duration" value="<%= duration %>" />
         </div>
-        
+
         <button class="save btn btn-large btn-info" type="submit">Save</button>
         <a href="#tasks/index" class="btn btn-large">Cancel</a>
       </form>
@@ -62,6 +62,7 @@
 
   <!-- the row template, renders once for each item in the index -->
   <script type="text/template" id="rowTemplate">
+
   
       <h1 class="rotate"><%= title %></h1>
       <h2 class="rotate"><%= duration %></h2>
@@ -73,9 +74,12 @@
 	    <a href="#task/<%= id %>/edit" class="task-title btn btn-danger btn-small">edit</a>
       <a href="#" class="delete btn btn-danger btn-small">delete</a>
 	  </div>
+
   </script>
 
-
+  <script type="text/javascript">
+          //alert("blash");
+  </script>
 
   <!-- kick off the app -->
   <script type="text/javascript">
@@ -111,5 +115,34 @@
     // now that everyting is setup we tell backbone to watch the urls
     Backbone.history.start();
   </script>
+
+<script>
+
+
+//Adds class 'divWidthChanger' to first-child div 
+function divCounterForWidth() {
+    $('#Tasks').children('div').addClass("divWidthChanger");
+    console.log("#Tasks");
+    var divCountForWidthChanger = ($("div.divWidthChanger").length) +1;
+    console.log("There are " + divCountForWidthChanger + " divs.");
+};
+
+divCounterForWidth();
+
+//Eventlistener for adding div count
+$(".save").click(function() {
+  alert("Handler for .click() called.");
+});
+
+//Take total number of divs and divide the sum by 100%
+
+//Add result to the css of all the divs with 'divWidthChanger'
+
+//Color generator 
+$(".divWidthChanger").each(function() {
+   var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
+   $(this).css("background-color", hue);
+});
+</script>
 </body>
 </html>
