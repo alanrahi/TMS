@@ -26,7 +26,6 @@ APP.TaskNewView = Backbone.View.extend({
   save: function (event) {
     event.stopPropagation();
     event.preventDefault();
-
     // update our model with values from the form
     this.task.set({
       title: this.$el.find('input[name=title]').val(),
@@ -42,12 +41,17 @@ APP.TaskNewView = Backbone.View.extend({
       // redirect back to the index
       console.log(this);
       window.location.hash = "tasks/index";
+      var divCountForWidthChanger = divCountForWidthChanger++;
     }
+
   },
 
   // populate the html to the dom
   render: function () {
+
     this.$el.html(_.template($('#formTemplate').html(), this.task.toJSON()));
+
     return this;
   }
+
 });
