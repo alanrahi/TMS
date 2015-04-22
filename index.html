@@ -119,28 +119,26 @@
 
 <script>
 
+var divCountForWidthChanger;
 
-//Adds class 'divWidthChanger' to first-child div 
 function divCounterForWidth() {
-    $('#Tasks').children('div').addClass("divWidthChanger");
-    console.log("#Tasks");
-    var divCountForWidthChanger = ($("div.divWidthChanger").length) +1;
-    console.log("There are " + divCountForWidthChanger + " divs.");
+  var $divs = $(".divWidth");
+
+    var divCountForWidthChanger = $divs.length;
+    var widthPercent = 100/divCountForWidthChanger;
+    $divs.width(widthPercent + "%");
+    
+    return divCountForWidthChanger;
+
+    // var divTotal = divCountForWidthChanger
+    // console.log(divTotal);
 };
 
 divCounterForWidth();
 
-//Eventlistener for adding div count
-$(".save").click(function() {
-  alert("Handler for .click() called.");
-});
-
-//Take total number of divs and divide the sum by 100%
-
-//Add result to the css of all the divs with 'divWidthChanger'
 
 //Color generator 
-$(".divWidthChanger").each(function() {
+$(".divWidth").each(function() {
    var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';
    $(this).css("background-color", hue);
 });

@@ -3,6 +3,8 @@ APP.TaskRowView = Backbone.View.extend({
   // the wrapper defaults to div, so only need to set this if you want something else
   // like in this case we are in a table so a tr
   tagName: "div",
+
+  className: "divWidth",
   // functions to fire on events
   events: {
     "click a.delete": "destroy",
