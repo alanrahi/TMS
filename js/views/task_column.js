@@ -17,6 +17,8 @@ APP.TaskRowView = Backbone.View.extend({
     // model is passed through
     this.task  = options.task;
     this.tasks = options.tasks;
+    _.bindAll(this,'destroy');
+
   },
 
   // populate the html to the dom
@@ -38,13 +40,16 @@ APP.TaskRowView = Backbone.View.extend({
 
   // delete the model
   destroy: function (event) {
+    
+
     event.preventDefault();
     event.stopPropagation();
     // we would call
-    // this.model.destroy();
+    console.log(this);
+    //this.trigger('destroy');
     // which would make a DELETE call to the server with the id of the item
-    this.tasks.remove(this.task);
-    this.$el.remove();
+    this.collection.remove(this);
+    //this.$el.remove();
   },
   
 
