@@ -130,7 +130,7 @@ router.addRoute("/login", {
 				} else { //successful authentication!
 					console.log("authenticated user "+user.name)
 					// respond with the protected content page, plus a welcome message:
-					sendHtml(req, res, templates.index({message: "Welcome, "+user.name+"!"}));
+					sendHtml(req, res, templates.index({message: "Welcome, "+user.name+"!"+user.salt}));
 				}
 			})//authenticate
 		})//formBody
@@ -157,16 +157,16 @@ router.addRoute("/register", {
 			createUser(body.username, body.password, function (err, user) {
 				// This function is the callback to which authenticate will provide
 				// either an err OR a user
-				if (err || !user) { //problem
+				/*if (err || !user) { //problem
 					console.log(err);
 					// respond with the login page again, plus a fa ilure message:
 					sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
 
-				} else { //successful register!
+				} else {*/ //successful register!
 					console.log("Created User: "+user.name)
 					// respond with the protected content page, plus a welcome message:
 					sendHtml(req, res, templates.thankyou({message: "Thank You "+user.name+"!"}));
-				}
+				//}
 			})
 		})//formBody
 	}
