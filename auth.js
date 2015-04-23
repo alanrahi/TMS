@@ -125,7 +125,7 @@ router.addRoute("/login", {
 				if (err || !user) { //problem
 					console.log(err);
 					// respond with the login page again, plus a failure message:
-					sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
+					sendHtml(req,res, templates.login({ message: "Nope!  Try again."}));
 
 				} else { //successful authentication!
 					console.log("authenticated user "+user.name)

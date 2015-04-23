@@ -7,7 +7,8 @@ _.templateSettings = {
 };
 var compiledTemplates = {};
 
-var templatesPath = path.join(__dirname, 'templates');
+var templatesPath = __dirname + '/templates';
+console.log(templatesPath);
 var files = fs.readdirSync(templatesPath);
 files.forEach(function(item){
   var templateName = path.basename(item, '.html');
