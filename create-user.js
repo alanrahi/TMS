@@ -3,7 +3,7 @@ var pwd = require("pwd");
 module.exports = function(db,collectionName) {
 //require must call this function to specify a db and collection name;
 // then it returns function createUser:
-	return function createUser (name, password) {
+	return function createUser (name, password, callback) {
 		var user = {
 			name: name
 		};
@@ -15,17 +15,22 @@ module.exports = function(db,collectionName) {
 			}
 			user.salt = salt;
 			user.hash = String(hash);
+			console.log('hello');
 
 			// Send them to the database collection 'users'
 			// with user name as a retrieval key:
 			db.put(collectionName, user.name, user)
 				.then(function (result) {
 					console.log("created user ", user.name)
+					callback(null, user);
 				})
 				.fail(function (err) {
 					console.error(err);
+					callback(err);
 				})
 		})
+
+
 	}
 }
 

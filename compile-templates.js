@@ -7,7 +7,7 @@ _.templateSettings = {
 };
 var compiledTemplates = {};
 
-var templatesPath = __dirname + '/templates';
+var templatesPath = path.join(__dirname + '/templates');
 console.log(templatesPath);
 var files = fs.readdirSync(templatesPath);
 files.forEach(function(item){
