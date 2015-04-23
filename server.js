@@ -7,16 +7,25 @@ var express = require('express');
 var app = express();
 
 var sendHtml = require("send-data/html");
+var database = require("./dummydata.js")
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/'));
 
-app.get('/', function(request, response) {
-  //response.send('Hello Alan!');
+app.get('./dummydata.js', function(req, res){
+  res.send('hello world');
 });
+
+// app.get('/', function(request, response) {
+//   //response.send('Hello Alan!');
+// });
+
+database.getUser();
+
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
+  //console.log(user);
 });
 
 /*var config = require('/config');
