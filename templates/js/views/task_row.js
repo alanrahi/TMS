@@ -11,48 +11,30 @@ APP.TaskRowView = Backbone.View.extend({
 	 },
 
 
-
   // the constructor
   initialize: function (options) {
     // model is passed through
     this.task  = options.task;
     this.tasks = options.tasks;
-    _.bindAll(this,'destroy');
-
   },
 
   // populate the html to the dom
   render: function () {
     this.$el.html(_.template($('#rowTemplate').html(), this.task.toJSON()));
-
     return this;
   },
 
-//   this.task.collection.each(function(log){
-//     console.log(log);
-//     var thing_type = this.model.get("id"),
-//     thing_other = this.model.get("instance");
-
-//     console.log(paintThing);
-//     console.log(thing_type);
-//     console.log(thing_other);
-// });
-
   // delete the model
   destroy: function (event) {
-    
-
     event.preventDefault();
     event.stopPropagation();
     // we would call
-    console.log(this);
-    //this.trigger('destroy');
+    // this.model.destroy();
     // which would make a DELETE call to the server with the id of the item
-    this.collection.remove(this);
-    //this.$el.remove();
+    this.tasks.remove(this.task);
+    this.$el.remove();
   },
   
-
   add: function (event) {
 	 
               
@@ -78,5 +60,4 @@ APP.TaskRowView = Backbone.View.extend({
             this.$('.instances > div:first-child').remove();
             console.log(this);
   }
-
 });
