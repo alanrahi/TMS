@@ -1,27 +1,40 @@
 {
-  "name": "http-authentication-example",
+  "name": "TMS",
   "version": "1.0.0",
   "description": "",
-  "main": "js/auth.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Daniel Bauer",
-  "contributors": [{
-    "name": "Daniel Bauer"
-  },{
-    "name": "Benjamin P. Verble"
-  }],
-  "license": "MIT",
+  "main": "index.js",
+  "private": true,
   "dependencies": {
     "body": "^4.5.0",
+    "bluebird": "^2.9.9",
+    "bookshelf": "^0.7.9",
+    "express": "^4.12.3",
+    "http": "^0.0.0",
     "generic-session": "^0.1.0",
-    "orchestrate": "^0.3.6",
+    "fs": "^0.0.2",
+    "knex": "^0.7.3",
+    "mongodb": "^1.4.31",
+    "orchestrate": "^0.4.2",
     "pwd": "0.0.4",
     "redirecter": "^0.2.3",
-    "routes-router": "^4.1.1",
-    "send-data": "^3.3.3",
-    "st": "^0.5.1",
-    "underscore": "^1.7.0"
-  }
+    "routes-router": "^4.1.2",
+    "pg": "^4.2.0",
+    "send-data": "^7.0.0",
+    "st": "^0.5.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alanrahi/TMS.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/alanrahi/TMS/issues"
+  },
+  "homepage": "https://github.com/alanrahi/TMS"
 }
