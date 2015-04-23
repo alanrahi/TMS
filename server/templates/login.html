@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Authentication Example</title>
+		<!-- load the bootstrap stylesheet -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- load the libraries we need -->
+    <script type="text/javascript" src="bower_components/zepto/zepto.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
+    <script type="text/javascript" src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
+    <!-- load our scripts -->
+    <script type="text/javascript" src="js/task_router.js"></script>
+    <script type="text/javascript" src="js/models/task_model.js"></script>
+    <script type="text/javascript" src="js/views/task_index.js"></script>
+    <script type="text/javascript" src="js/views/task_row.js"></script>
+    <script type="text/javascript" src="js/views/task_new.js"></script>
+    <script type="text/javascript" src="js/views/task_edit.js"></script>
+    <script type="text/javascript" src="js/views/task_show.js"></script>
+  </head>
+  <body class='loginPage'>
+		<section class="loginSection">
+			<h1>TMS Login</h1>
+				<div>{{message}}</div>
+
+				<form method="post" action="/login">
+				<br/>
+					<p>
+						<label>Username:</label>
+						<input name="username" type="text">
+        </p>
+        <p>
+					<label>Password:</label>
+					<input name="password" type="password">
+					<!--input name="password" type="text"-->
+        </p>
+        <p>
+					<input value="Login" type="submit">
+        </p>
+      </form>
+      <a href="/logout">Log-Out</a>
+      <a href="/register">Register</a>
+
+    </section>
+  </body>
+</html>

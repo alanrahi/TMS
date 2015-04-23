@@ -5,7 +5,7 @@ var Router = require("routes-router");
 var router = Router();
 //var fs = require('fs');
 
-var config = require('./config'); //load the orchestrate key
+var config = require('../config'); //load the orchestrate key
 var db = require('orchestrate')(config.dbKey); // use the key to connect to orch app
 // If you're offline, replace the db above with this volatile store:
 //var db = require('./fake-db');
@@ -173,7 +173,7 @@ router.addRoute("/register", {
 });
 
 router.addRoute("/*", st({
-	path: __dirname + "/",
+	path: __dirname + "/../client",
 	url: "/"
 }));
 
