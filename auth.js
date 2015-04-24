@@ -163,7 +163,7 @@ router.addRoute("/register", {
 					sendHtml(req,res,templates.login({ message: "Nope!  Try again."}));
 
 				} else {*/ //successful register!
-					console.log("Created User: "+user.name)
+					//console.log("Created User: "+user.name)
 					// respond with the protected content page, plus a welcome message:
 					sendHtml(req, res, templates.thankyou({message: "Thank You "+user.name+"!"}));
 				//}
