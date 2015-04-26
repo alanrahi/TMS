@@ -1,4 +1,3 @@
-// Familiar components:
 var http = require("http");
 var st = require('st');
 var Router = require("routes-router");
