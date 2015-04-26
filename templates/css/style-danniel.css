@@ -1,0 +1,52 @@
+body {
+	background-color: #e0ffff;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Helvetica Neue","nimbus-sans";
+  }
+
+/* Nav style */  
+
+.nav-div {
+ 	padding: 10px 0px 0px 10px;
+
+ }
+
+.tms-title {
+  font-size: 65px;
+  font-weight: bold;
+  line-height: 0.50em;
+  letter-spacing: -0.05em;
+  color: #acc;
+}
+
+.tms-slogan {
+  font-size: 25px;
+  font-style: italic;
+  line-height: 0.45em;
+  letter-spacing: -0.05em;
+  color: #acc;
+  padding-left: 10px;
+}
+
+.tms-hr {
+	border-bottom: 1px Solid #acc;
+
+}
+
+/* Footer style */
+
+footer {
+	background-color: #ffffff;
+	height: 60px;
+
+}
+.footer-div {
+	padding: 10px 0px 0px 10px;
+}
+
+.footer-paragraph {
+	font-size: 15px;
+	color: #acc;
+}
