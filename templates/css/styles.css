@@ -64,3 +64,22 @@
 /* Internet Explorer */
 /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
 /*}*/
+
+/**********************Login Page Styling**************************/
+
+.loginPage {
+	background-color: lightblue;
+}
+.loginSection {
+	text-align: center;
+	padding-top: 10%;
+}
+
+.regSection {
+	text-align: center;
+	padding-top: 10%;
+}
+
+.regPage {
+	background-color: pink;
+}
