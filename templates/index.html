@@ -6,9 +6,13 @@
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
   <link href="css/style-danniel.css" media="all" rel="stylesheet" type="text/css">
   <link href="css/styles.css" media="all" rel="stylesheet" type="text/css" />
-  <link href="css/style-css.css" media="all" rel="stylesheet" type="text/css">
   
-    <!-- Fonts Title -->
+  <!-- Fonts Title -->
+    <!-- Orbitron -->
+    <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500' rel='stylesheet' type='text/css'>
+    <!-- Belleza -->
+    <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
+
   <script src="//use.typekit.net/wat4for.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
@@ -36,10 +40,15 @@
     <p class="tms-title">TMS<sup class="tms-tm">&#8482;</sup></p>
     <p class="tms-slogan">Track your shit the right way</p> 
   </div> 
+
+  <div id='box'>
+      <div id='weather'></div>
+  </div>
+  
   <div class="nav-menu">
     <ul class="nav-ul">
-      <li class="nav-li"><a href="">The Team</a></li>
-      <li class="nav-li"><a href="">The Technology</a></li>
+      <li class="nav-li"><a href="">the Team</a></li>
+      <li class="nav-li"><a href="">the Project</a></li>
       <li class="nav-li"><a href="">Logout</a></li>
     </ul>
    </div>  
@@ -141,6 +150,27 @@
     
     // now that everyting is setup we tell backbone to watch the urls
     Backbone.history.start();
+  
+
+    //Weather
+    jQuery(document).ready(function($) {
+      $.ajax({
+      url : //"http://api.wunderground.com/api/f71270681576e132/geolookup/conditions/q/IA/Cedar_Rapids.json",
+        "http://api.wunderground.com/api/f71270681576e132/geolookup/conditions/q/autoip.json",
+      dataType : "jsonp",
+      success : function(parsed_json) {
+      var location = parsed_json['location']['city'];
+      var temp_f = parsed_json['current_observation']['temp_f'];
+        var weather = 
+        parsed_json['current_observation']
+        ['weather'];
+        var icon = 
+            "<img src=" + parsed_json['current_observation']
+        ['icon_url']+ '>'
+      $('#weather').html(icon + '<br/>' + "Current temperature in " + location + " is: " + temp_f + "&#x2109;" + '<br/>' + 'Current weather is ' + weather);
+      }
+      });
+    });
   </script>
 
 
