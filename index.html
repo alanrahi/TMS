@@ -48,7 +48,7 @@
         </div>
 
         <button class="save btn btn-large btn-info" type="submit">Save</button>
-        <a href="#tasks/index" class="btn btn-large">Cancel</a>
+        <a href="#tasks/index" class="btn btn-large">Chocolate</a>
       </form>
     </div>
   </script>
@@ -69,12 +69,12 @@
       <h2 class="rotate"><%= duration %></h2>
       <div class="instances">instances stack here</div>
       <div class="task-buttons">
-	    <a href="#" class="add task-title btn btn-danger btn-small">+</a>
+      <a href="#" class="add task-title btn btn-danger btn-small">+</a>
       <a href="#" class="petitedelete task-title btn btn-danger btn-small">-</a>
       <bootstrap><br><br>
-	    <a href="#task/<%= id %>/edit" class="task-title btn btn-danger btn-small">edit</a>
+      <a href="#task/<%= id %>/edit" class="task-title btn btn-danger btn-small">edit</a>
       <a href="#" class="delete btn btn-danger btn-small">delete</a>
-	  </div>
+    </div>
 
   </script>
 
@@ -87,12 +87,8 @@
     var router = new APP.TaskRouter({
       tasks: new APP.TaskCollection()
     });
-
     // we manually pass in the initial data, but this would be called with a collection.fetch() normally
-
     //Note that fetch should not be used to populate collections on page load — all models needed at load time should already be bootstrapped in to place. fetch is intended for lazily-loading models for interfaces that are not needed immediately: for example, documents with collections of notes that may be toggled open and closed. http://backbonejs.org/#Collection-fetch//
-
-
     router.tasks.reset([
       {
         "title": "Running",
@@ -119,8 +115,6 @@
   </script>
 
 <script>
-
-
 //Adds class 'divWidthChanger' to first-child div 
 function divCounterForWidth() {
     $('#Tasks').children('div').addClass("divWidthChanger");
@@ -128,18 +122,13 @@ function divCounterForWidth() {
     var divCountForWidthChanger = ($("div.divWidthChanger").length) +1;
     console.log("There are " + divCountForWidthChanger + " divs.");
 };
-
 divCounterForWidth();
-
 //Eventlistener for adding div count
 $(".save").click(function() {
   alert("Handler for .click() called.");
 });
-
 //Take total number of divs and divide the sum by 100%
-
 //Add result to the css of all the divs with 'divWidthChanger'
-
 //Color generator 
 $(".divWidthChanger").each(function() {
    var hue = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ',' + (Math.floor((256-199)*Math.random()) + 200) + ')';

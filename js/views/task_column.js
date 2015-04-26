@@ -48,8 +48,8 @@ APP.TaskRowView = Backbone.View.extend({
     console.log(this);
     //this.trigger('destroy');
     // which would make a DELETE call to the server with the id of the item
-    this.collection.remove(this);
-    //this.$el.remove();
+    //this.collection.remove(this);
+    this.$el.remove();
   },
   
 
