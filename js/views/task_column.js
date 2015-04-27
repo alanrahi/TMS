@@ -18,12 +18,13 @@ APP.TaskRowView = Backbone.View.extend({
     this.task  = options.task;
     this.tasks = options.tasks;
     _.bindAll(this,'destroy');
+    this.template = _.template($('#rowTemplate').html());
 
   },
 
   // populate the html to the dom
   render: function () {
-    this.$el.html(_.template($('#rowTemplate').html(), this.task.toJSON()));
+    this.$el.html();
 
     return this;
   },
@@ -59,6 +60,7 @@ APP.TaskRowView = Backbone.View.extend({
       
             this.$('.instances').append('<div class ="instance-div"> xxxx </div>');
             console.log(this);
+
             
           
 

@@ -22,5 +22,6 @@ APP.TaskModel = Backbone.Model.extend({
 
 APP.TaskCollection = Backbone.Collection.extend({
   // Reference to this collection's model.
-  model: APP.TaskModel
+  model: APP.TaskModel,
+  url: '/api'
 });

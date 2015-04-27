@@ -76,7 +76,8 @@ router.addRoute("/api", {
                 console.log("Searching db for "+searchStr);
 
                 // return subset of db:
-                db.search(dbCollectionName, keyStr)
+                //db.search(dbCollectionName, keyStr)
+                db.get(dbCollectionName, keyStr) 
                 // db.newSearchBuilder()
                 //     .collection(dbCollectionName)
                 //     .limit(100)
@@ -84,6 +85,8 @@ router.addRoute("/api", {
                 //     .query(searchStr)
                     .then(forwardOrchResults)
                     .fail(handleFailure)
+
+
 
             } else { //no query; return entire db
                 db.list(dbCollectionName)
