@@ -30,6 +30,7 @@
 }
 .task-title	{
 	display: block;
+  font-family: 'Belleza', sans-serif;
 }
 
 .title-block  {
@@ -39,7 +40,9 @@
 }
 
 .title-block h1 {
-  color: #cc0000;
+  color: #acc;
+  font-family: 'Belleza', sans-serif;
+  font-size: 35px;
 }
 
 .title-block .edit-btn  {
@@ -56,6 +59,9 @@
 
 .delete	{
 	display: block;
+  font-family: 'Belleza', sans-serif;
+  font-size: 20px;
+  color: #acc;
 }
 
 .instances	{
@@ -68,10 +74,13 @@
 .task-buttons	{
 	float:left;
 	width:100%;
+  font-family: 'Belleza', sans-serif;
+  color: rgba(64, 224, 208, 0.9);
 }
 
 .task-buttons a	{
 	width:100px;
+  font-family: 'Belleza', sans-serif;
 }
 
 .instance-divs {
@@ -103,8 +112,25 @@
     box-shadow:4px 0px 1px #ccc;
     border-left:1px solid #999;
 }
+ 
 
-/*.rotate {
+.btn-danger {
+  color: rgb(0, 0, 0, 0);
+  background-color: rgba(64, 224, 208, 0.9);
+  border-color: rgba(64, 224, 208, 0.9);
+  font-family: 'Belleza', sans-serif;
+  font-size: 20px;
+   -webkit-transition: .12s;
+  transition: .12s;
+}
+
+.btn-danger:hover {
+  color: rgb(0, 0, 0, 0);
+  background-color: #acc;
+  border-color: #acc;
+   -webkit-transition: .12s;
+  transition: .12s;
+}
 /* Safari */
 /*-webkit-transform: rotate(-90deg);*/
 /* Firefox */
