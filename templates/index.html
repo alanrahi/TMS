@@ -4,14 +4,23 @@
   <title>TMS</title>
   <!-- load the bootstrap stylesheet -->
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="css/style-danniel.css" media="all" rel="stylesheet" type="text/css">
   <link href="css/styles.css" media="all" rel="stylesheet" type="text/css" />
+  
+  <!-- Fonts Title -->
+    <!-- Orbitron -->
+    <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500' rel='stylesheet' type='text/css'>
+    <!-- Belleza -->
+    <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>
+
+  <script src="//use.typekit.net/wat4for.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
   <!-- load the libraries we need -->
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-
-   <script type="text/javascript" src="backbone.localStorage.js"></script>
-
+  <script type="text/javascript" src="backbone.localStorage.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <!-- load our scripts -->
   <script type="text/javascript" src="js/task_router.js"></script>
@@ -21,17 +30,34 @@
   <script type="text/javascript" src="js/views/task_new.js"></script>
   <script type="text/javascript" src="js/views/task_edit.js"></script>
   <!-- <script type="text/javascript" src="js/views/task_show.js"></script>-->
+
+
+
 </head>
 <body>
+<nav>
+  <div class="nav-div">
+    <p class="tms-title">TMS<sup class="tms-tm">&#8482;</sup></p>
+    <p class="tms-slogan">Track your shit the right way</p> 
+  </div> 
+
+  <div id='box'>
+      <div id='weather'></div>
+  </div>
+  
+  <div class="nav-menu">
+    <ul class="nav-ul">
+      <li class="nav-li"><a href="">the Team</a></li>
+      <li class="nav-li"><a href="">the Project</a></li>
+      <li class="nav-li"><a href="">Logout</a></li>
+    </ul>
+   </div>  
+</nav>
 
   <div class="container">
     <div class="row">
       <div class="col-md-12" id="primary-content">
 
-
-      <p> Chocolate </p>
-
-        <!-- the container that gets populated with the index -->
       </div>
     </div>
   </div>
@@ -60,7 +86,7 @@
   <!-- the index container -->
   <script type="text/template" id="indexTemplate">
     <div class="well">
-      <a class="btn btn-block btn-large btn-info" href="#task/new">Create New Task</a>
+      <a class="btn-green-bg btn btn-block btn-large btn-info" href="#task/new">Create New Task</a>
     </div>
       <div id="Tasks"></div>
   </script>
@@ -124,6 +150,27 @@
     
     // now that everyting is setup we tell backbone to watch the urls
     Backbone.history.start();
+  
+
+    //Weather
+    jQuery(document).ready(function($) {
+      $.ajax({
+      url : //"http://api.wunderground.com/api/f71270681576e132/geolookup/conditions/q/IA/Cedar_Rapids.json",
+        "http://api.wunderground.com/api/f71270681576e132/geolookup/conditions/q/autoip.json",
+      dataType : "jsonp",
+      success : function(parsed_json) {
+      var location = parsed_json['location']['city'];
+      var temp_f = parsed_json['current_observation']['temp_f'];
+        var weather = 
+        parsed_json['current_observation']
+        ['weather'];
+        var icon = 
+            "<img src=" + parsed_json['current_observation']
+        ['icon_url']+ '>'
+      $('#weather').html(icon + '<br/>' + "Current temperature in " + location + " is: " + temp_f + "&#x2109;" + '<br/>' + 'Current weather is ' + weather);
+      }
+      });
+    });
   </script>
 
 
