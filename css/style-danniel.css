@@ -167,6 +167,7 @@ p {
   height: 55px;
   text-align: center;
   color: #555555;
+
   /*-moz-box-shadow:1px 0px 1px #bbbbbb,
     0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
     1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
@@ -198,18 +199,27 @@ p {
 }
 
 .login-width {
-  width: 14%;
+  width: 25%;
   height: 55px;
   line-height: 41px;
+  border-radius: 0px;
 }
+
 
 .regSection {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 2%;
 }
 
 /* Weather */
-.weather-image {
+.icon {
+  padding: 0 0 0 0;
+  margin: 0 auto -25px auto;
+  background-color: #ffffff;
+  width: 61px;
+  border: solid 1px;
+  border-radius: 100%;
+  /*margin-left: 45%;*/
 
 }
 
