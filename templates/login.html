@@ -41,32 +41,28 @@
 </nav>
 
 		<section class="loginSection">
-				<div>{{message}}</div>
+				<div class="label-text">{{message}}</div>
 
 				<form method="post" action="/login">
 				<br/>
-					<p>
-						<label class="label-text">Username:</label>
-          </p>
           <p>  
-						<input  class="label-shadow" name="username" type="text">
+						<input  class="label-shadow" name="username" type="text" placeholder="Login">
           </p>
-        <p>
+        <!-- <p>
 					<label class="label-text">Password:</label>
-        </p>
+        </p> -->
         <p>  
-					<input class="label-shadow" name="password" type="password">
+					<input class="label-shadow" name="password" type="password" placeholder="Password">
 					<!--input name="password" type="text"-->
         </p>
         <br>
         <p>
-					<input class="login-width edit-btn btn btn-danger btn-small" value="Login" type="submit">
+					<input class="login-width edit-btn btn btn-danger btn-large" value="Login" type="submit">
         </p>
       </form>
       <!-- <a href="/logout" class="login-width edit-btn btn btn-danger btn-small">Log-Out</a>
       <br> -->
-      <br>
-      <a href="/register" class="login-width edit-btn btn btn-danger btn-small">Register</a>
+      <a href="/register" class="login-width edit-btn btn btn-danger btn-small">Creat An Account</a>
 
 
     </section>
