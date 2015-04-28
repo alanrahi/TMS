@@ -12,7 +12,6 @@ APP.TaskIndexView = Backbone.View.extend({
   render: function () {
     this.$el.html($('#indexTemplate').html());
     this.addAll();
-
     return this;
   },
 
@@ -29,12 +28,9 @@ APP.TaskIndexView = Backbone.View.extend({
           task: task
     
         });
-
+    
     this.$el.find("#Tasks").append(view.render().el);
-
-    // $(".save").click(function() {
-    //   divCounterForWidth()
-    // });
+  
   }
 
 });
