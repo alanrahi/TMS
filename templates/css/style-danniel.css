@@ -34,6 +34,10 @@ p {
     8px 8px 8px rgba(0, 0, 0, 0.1);
 }
 
+.well {
+  border-radius: 0px;
+}
+
 
 /* Nav style */  
 
@@ -149,7 +153,54 @@ p {
 
 .loginSection {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 2%;
+}
+
+.login-font {
+    font: font-family: 'Belleza', sans-serif;
+}
+
+.label-shadow {
+  font: font: font-family: 'Belleza', sans-serif;
+  font-size: 25px;
+  width: 25%;
+  height: 55px;
+  text-align: center;
+  color: #555555;
+  -moz-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.label-text {
+  font: font: font-family: 'Belleza', sans-serif;
+  font-size: 45px;
+  color: #acc;
+}
+
+.login-width {
+  width: 14%;
+  height: 55px;
+  line-height: 41px;
 }
 
 .regSection {
