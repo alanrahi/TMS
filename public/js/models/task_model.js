@@ -3,12 +3,6 @@
 //create the class TaskModel
 APP.TaskModel = Backbone.Model.extend({
   // you can set any defaults you would like here
-  
-  initialize: function(){
-
-
-  },
-
   defaults: {
     title: "",
     duration: "",
@@ -31,10 +25,3 @@ APP.TaskCollection = Backbone.Collection.extend({
   model: APP.TaskModel,
   url: '/api'
 });
-
-
-var taskCollection = new APP.TaskCollection();
-
-// $(function(){
-//   taskCollection.fetch();
-// })

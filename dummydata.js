@@ -359,22 +359,48 @@ password, location */
 
 	
 
-module.exports = {
-
-//provide the ID and the data and return all userdata for that day that is required for display to the DOM
-
-	getUser : function() {
-
-				for (var i = 0; i < database.length; i += 1) {
-						
-						var myUser = database[i].user.firstname;
-						console.log(myUser);
-
-		 			}
-
+var db = {
+	// fake a get request:
+	get: function(collection, username) {
+		var result = database[username],
+			promise = {},
+			ok = result || false;
+		promise.then = function(cb) {
+			if (ok)
+				cb({body:result});
+			return promise;
+		};
+		promise.fail = function(cb) {
+			if (!ok)
+				cb("doh!");
+			return promise;
+		};
+		return promise;
+	},
+	// fake a put request:
+	put: function(collection, username, user) {
+		database[username] = user;
+		var promise = {},
+			ok = true; //always ok
+		promise.then = function(cb) {
+			if (ok)
+				cb("ok");
+			return promise;
+		};
+		promise.fail = function(cb) {
+			if (!ok)
+				cb("doh!")
+			return promise;
+		};
+		return promise;
+	},
+	// for debugging only:
+	list: function() {
+		console.log(database);
+	}
 }
-}
 
+module.exports = db;
 
 	
 
