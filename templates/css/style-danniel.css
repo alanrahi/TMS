@@ -8,7 +8,32 @@ body {
 
 p {
   font-family: 'Belleza', sans-serif;
-}  
+} 
+
+.button-shadow {
+      -moz-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Nav style */  
 
@@ -142,7 +167,7 @@ p {
   text-align: center;
   font-family: 'Belleza', sans-serif;
   color: #ffffff;
-  top: -7px;
+  top: 4px;
   right: 102px;
   position: absolute;
 }
