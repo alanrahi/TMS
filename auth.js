@@ -105,7 +105,7 @@ router.addRoute("/logout", {
 
 router.addRoute("/login", {
 	GET: function (req, res, opts) {
-		sendHtml(req, res, templates.login({ message: "Please log in"}));	
+		sendHtml(req, res, templates.login({ message: "Wecome to Track My Stuff."+ "<br>"+ "Get ready to track your tasks like a Rock Star"+"<br>"+ "Please log in"}));	
 	},
 	
 
