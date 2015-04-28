@@ -54,7 +54,8 @@
   float: left;
   width: 75%;
   background: #fff;
-  padding: 0;
+  padding: 7px 0 0 15px;
+  min-height: 140px;
 }
 
 .delete	{
@@ -68,6 +69,7 @@
 	display:block;
 	float:left;
 	margin: 0;
+  padding: 3px 0 0 0;
 	 
 }
 
@@ -81,6 +83,7 @@
 .task-buttons a	{
 	width:100px;
   font-family: 'Belleza', sans-serif;
+  margin: 0 0 3px 0;
 }
 
 .instance-divs {
@@ -105,7 +108,7 @@
 
 .instance-div{
     background:#eeeeee;
-    padding:20px;
+    padding: 10px 20px;
     position:relative;
     z-index:2;
     display: inline-block;

@@ -53,11 +53,12 @@ p {
 }
 
 .nav-menu {
-    width: 60%;
+    /*width: 60%;*/
     position: absolute;
     top: 105px;
     /*right: -28%; /*Tal need your help aligning the menue to the bottom div */
-    left: 68%;
+    /*left: 68%; */
+    right:63px;
 }
 
 .nav-ul {
@@ -148,7 +149,7 @@ p {
 
 #weather {
   font-family: 'Belleza', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   padding: 0 0 0 0;
 
 }
