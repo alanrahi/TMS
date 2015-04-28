@@ -30,7 +30,6 @@
 }
 .task-title	{
 	display: block;
-  font-family: 'Belleza', sans-serif;
 }
 
 .title-block  {
@@ -40,9 +39,7 @@
 }
 
 .title-block h1 {
-  color: #acc;
-  font-family: 'Belleza', sans-serif;
-  font-size: 35px;
+  color: #cc0000;
 }
 
 .title-block .edit-btn  {
@@ -54,36 +51,27 @@
   float: left;
   width: 75%;
   background: #fff;
-  padding: 7px 0 0 15px;
-  min-height: 140px;
+  padding: 0;
 }
 
 .delete	{
 	display: block;
-  font-family: 'Belleza', sans-serif;
-  font-size: 20px;
-  color: #acc;
 }
 
 .instances	{
 	display:block;
 	float:left;
 	margin: 0;
-  padding: 3px 0 0 0;
 	 
 }
 
 .task-buttons	{
 	float:left;
 	width:100%;
-  font-family: 'Belleza', sans-serif;
-  color: rgba(64, 224, 208, 0.9);
 }
 
 .task-buttons a	{
 	width:100px;
-  font-family: 'Belleza', sans-serif;
-  margin: 0 0 3px 0;
 }
 
 .instance-divs {
@@ -108,32 +96,15 @@
 
 .instance-div{
     background:#eeeeee;
-    padding: 10px 20px;
+    padding:20px;
     position:relative;
     z-index:2;
     display: inline-block;
     box-shadow:4px 0px 1px #ccc;
     border-left:1px solid #999;
 }
- 
 
-.btn-danger {
-  color: rgb(0, 0, 0, 0);
-  background-color: rgba(64, 224, 208, 0.9);
-  border-color: rgba(64, 224, 208, 0.9);
-  font-family: 'Belleza', sans-serif;
-  font-size: 20px;
-   -webkit-transition: .12s;
-  transition: .12s;
-}
-
-.btn-danger:hover {
-  color: rgb(0, 0, 0, 0);
-  background-color: #acc;
-  border-color: #acc;
-   -webkit-transition: .12s;
-  transition: .12s;
-}
+/*.rotate {
 /* Safari */
 /*-webkit-transform: rotate(-90deg);*/
 /* Firefox */
