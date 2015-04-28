@@ -125,28 +125,31 @@
   <script type="text/javascript">
     var router = new APP.TaskRouter({
       tasks: new APP.TaskCollection()
+
     });
 
-    router.tasks.reset([
-      {
-        "title": "Running",
-        "id": "45",
-        "duration": "30",
-        "instance": [0,1,2,3,4,5]
-      },
-      {
-        "title": "Example Task 2",
-        "id": "48",
-        "duration": "30",
-        "instance": [0,1]
-      },
-      {
-        "title": "Example Task 3",
-        "id": "52",
-        "duration": "30",
-        "instance": [0,1]
-      }
-    ]);
+    
+
+    // router.tasks.reset([
+    //   {
+    //     "title": "Running",
+    //     "id": "45",
+    //     "duration": "30",
+    //     "instance": [0,1,2,3,4,5]
+    //   },
+    //   {
+    //     "title": "Example Task 2",
+    //     "id": "48",
+    //     "duration": "30",
+    //     "instance": [0,1]
+    //   },
+    //   {
+    //     "title": "Example Task 3",
+    //     "id": "52",
+    //     "duration": "30",
+    //     "instance": [0,1]
+    //   }
+    // ]);
     
     // now that everyting is setup we tell backbone to watch the urls
     Backbone.history.start();

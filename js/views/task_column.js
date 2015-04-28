@@ -24,7 +24,10 @@ APP.TaskRowView = Backbone.View.extend({
 
   // populate the html to the dom
   render: function () {
-    this.$el.html();
+    console.log('rendering column');
+    console.log(this.task);
+    //this.$el.html(_.template($('#rowTemplate').html(), this.task.toJSON()));
+    this.$el.html(this.template(this.task.attributes));
 
     return this;
   },
@@ -82,3 +85,12 @@ APP.TaskRowView = Backbone.View.extend({
   }
 
 });
+
+
+
+
+
+
+
+
+
