@@ -43,14 +43,9 @@ APP.TaskRouter = Backbone.Router.extend({
     this.currentView = new APP.TaskIndexView({
       tasks: this.tasks
     });
-    var self = this; //save the context of this in a variable
-    this.tasks.fetch({ success: function(){
-        $('#primary-content').html(self.currentView.render().el);
-
-    }});
-    
+    $('#primary-content').html(this.currentView.render().el);
     // we would call to the index with
-
+    // this.tasks.fetch()
     // to pull down the index json response to populate our collection initially
   }
 });

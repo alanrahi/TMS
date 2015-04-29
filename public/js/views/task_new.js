@@ -27,8 +27,6 @@ APP.TaskNewView = Backbone.View.extend({
     event.stopPropagation();
     event.preventDefault();
     // update our model with values from the form
-    console.log('console logging this.task');
-    console.log(this.task);
     this.task.set({
       title: this.$el.find('input[name=title]').val(),
       duration: this.$el.find('input[name=duration]').val(),
@@ -37,7 +35,6 @@ APP.TaskNewView = Backbone.View.extend({
       id: Math.floor(Math.random() * 100) + 1
     });
     if (this.task.isValid()){
-      console.log('model is valid, adding to collection');
       // add it to the collection
       this.tasks.add(this.task);
       // this.task.save();
