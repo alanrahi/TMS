@@ -30,10 +30,11 @@ APP.TaskNewView = Backbone.View.extend({
     console.log('console logging this.task');
     console.log(this.task);
     var date = new Date();
+    var ms = date.getMilliseconds().toString();
     var month = (date.getMonth()+1).toString();
     var day = date.getDate().toString();
     var year = date.getFullYear().toString();
-    var currentDate = month+"-"+day+"-"+year;
+    var currentDate = ms+"-"+month+"-"+day+"-"+year;
     //console.log(currentDate);
     //var currentDate = toString(date.getMonth())+"-"+toString(date.getDate())+"-"+toString(date.getFullYear());
     console.log(currentDate);

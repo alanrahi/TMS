@@ -278,6 +278,12 @@ router.addRoute("/api", {
 
 	},		
 
+
+
+	});
+
+router.addRoute("/api/*", {
+
 	PUT: function(req,res,opts) {
 		console.log("Processing Put request...");
 
@@ -299,7 +305,13 @@ router.addRoute("/api", {
 
 		}
 
-	});
+
+
+
+
+
+
+});
 
 
 
