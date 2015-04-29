@@ -1,5 +1,6 @@
 body {
 	background-color: #e0ffff;
+
 }
 
 /*h1 h2 h3 h4 h5 h6 {
@@ -9,6 +10,10 @@ body {
 p {
   font-family: 'Belleza', sans-serif;
 } 
+
+.flip {
+  webkit-animation-duration: 2s;
+}
 
 .button-shadow {
       -moz-box-shadow:1px 0px 1px #bbbbbb,
@@ -110,7 +115,10 @@ p {
   font-size: 21px;
   -webkit-transition: .12s;
   transition: .12s;
+  -webkit-animation-duration: 10s;
+   -webkit-animation-delay: 1s;
 } 
+
 
 .nav-li:hover {
   background-color: #e0ffff;

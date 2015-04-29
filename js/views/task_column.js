@@ -60,6 +60,7 @@ APP.TaskRowView = Backbone.View.extend({
       
             this.$('.instances').append('<div class ="instance-div">&nbsp;</div>');
             console.log(this);
+
             
           
 

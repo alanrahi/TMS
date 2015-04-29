@@ -6,7 +6,8 @@
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
   <link href="../css/style-danniel.css" media="all" rel="stylesheet" type="text/css">
   <link href="../css/styles.css" media="all" rel="stylesheet" type="text/css" />
-  
+  <link href="../css/animate.css" media="all" rel="stylesheet" type="text/css" /> 
+   
   <!-- Fonts Title -->
     <!-- Orbitron -->
     <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500' rel='stylesheet' type='text/css'>
@@ -44,17 +45,38 @@
  
     <div id='box'>
         <div id='weather'></div>
-    </div>
-
-  
+    </div> 
   <div class="nav-menu">
     <ul class="nav-ul">
-      <li class="nav-li"><a href="">the Team</a></li>
+      <li class="nav-li"><a href="theTeam.html">the Team</a></li>
       <li class="nav-li"><a href="">the Project</a></li>
       <li class="nav-li"><a href="">Logout</a></li>
     </ul>
    </div>  
 </nav>
+<script>
+$(function(){
+
+//Body animation
+  $('.add').on('click',function(){
+    $('.instances').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
+       $(this).removeClass('animated flip')
+    });
+  });
+
+  $('.tms-title').mouseenter(function(){
+    $(this).addClass('animated infinite bounce').mouseleave('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
+       $(this).removeClass('animated infinite bounce')
+       console.log('okay, it worked')
+    });
+
+  })
+});
+</script>
+
+<script>
+</script>
+
 <div class="container-background">
   <div class="container">
     <div class="row">
@@ -174,6 +196,7 @@
       });
     });
   </script>
+
 
 
 
