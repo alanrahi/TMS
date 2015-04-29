@@ -57,8 +57,15 @@
 <script>
 $(function(){
 
-//Body animation
+//Add animation -add
   $('.add').on('click',function(){
+    $('.instances').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
+       $(this).removeClass('animated flip')
+    });
+  });
+
+  //Remove animation -remove
+  $('.petitedelete').on('click',function(){
     $('.instances').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
        $(this).removeClass('animated flip')
     });
