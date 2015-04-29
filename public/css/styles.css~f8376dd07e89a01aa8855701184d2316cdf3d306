@@ -1,0 +1,118 @@
+.taskDiv	{
+	  background-color: #E8DFDF;
+	  float: left;
+    width: 100%;
+    margin: 0 0 20px 0;
+    background:#eeeeee;
+    position:relative;
+    z-index:2;
+    -moz-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+.task-title	{
+	display: block;
+}
+
+.title-block  {
+  float: left;
+  width: 25%;
+  padding: 0 2% 2%;
+}
+
+.title-block h1 {
+  color: #cc0000;
+}
+
+.title-block .edit-btn  {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.instance-block {
+  float: left;
+  width: 75%;
+  background: #fff;
+  padding: 0;
+}
+
+.delete	{
+	display: block;
+}
+
+.instances	{
+	display:block;
+	float:left;
+	margin: 0;
+	 
+}
+
+.task-buttons	{
+	float:left;
+	width:100%;
+}
+
+.task-buttons a	{
+	width:100px;
+}
+
+.instance-divs {
+	width:100px;
+	color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    display: inline-block;
+  	margin-bottom: 0;
+  	font-weight: 400;
+  	text-align: center;
+  	vertical-align: middle;
+  	cursor: pointer;
+  	background-image: none;
+  	border: 1px solid transparent;
+  	white-space: nowrap;
+  	padding: 6px 12px;
+  	font-size: 14px;
+  	line-height: 1.42857143;
+  	border-radius: 4px;
+}
+
+.instance-div{
+    background:#eeeeee;
+    padding:20px;
+    position:relative;
+    z-index:2;
+    display: inline-block;
+    box-shadow:4px 0px 1px #ccc;
+    border-left:1px solid #999;
+}
+
+/*.rotate {
+/* Safari */
+/*-webkit-transform: rotate(-90deg);*/
+/* Firefox */
+/*-moz-transform: rotate(-90deg);*/
+/* IE */
+/*-ms-transform: rotate(-90deg);*/
+/* Opera */
+/*-o-transform: rotate(-90deg);*/
+/* Internet Explorer */
+/*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+/*}*/

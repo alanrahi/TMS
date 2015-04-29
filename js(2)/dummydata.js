@@ -10,26 +10,30 @@ var database = {
 		 },
 				  
 "tasks" : [			 	
-									{ "date" : 04212014,
+									{ "date" : "04212014",
 									  "hi" : 76,
   								  	  "low" : 48,
-  								      "precip" : 3	
-									  "currentTaskModel" : {
+  								      "precip" : 3,	
+									  "currentTaskModel" : [
 
-										   "task1" : { "taskname" : "cigarettes",
+										    { "title" : "cigarettes",
+										   				"id" : 1,
 										   				"instances" : 4,
 										   				"duration" : 5
 													  },
 
-										   "task2" : { "taskname" : "blunts",
+										    { "title" : "blunts",
+										   				"id" : 2,
 										   				"instances" : 4,
 										   				"duration" : 10
 													  },
 
-										   "task3" : { "taskname" : "martinis",
+										   { "title" : "martinis",
+										   				"id" : 3,
 										   				"instances" : 5,
 										   				"duration" : 10
-													 }	
+										   			}
+													 ]	
 																					}
 									},
 									//second item in the array , aka index 1
