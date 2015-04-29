@@ -72,13 +72,12 @@ p {
 }
 
 .tms-slogan {
-  font-size: 22px;
-  font-style: italic;
+  font-size: 28px;
   line-height: 1.0em;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   color: #ffffff;
   padding-left: 10px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Frutiger', sans-serif;
 }
 
 .nav-menu {
