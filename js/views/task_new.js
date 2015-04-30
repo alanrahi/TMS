@@ -11,7 +11,7 @@ APP.TaskNewView = Backbone.View.extend({
     this.task  = options.task;
     this.tasks = options.tasks;
     this.task.bind('invalid', this.showErrors, this);
-    console.log(this);
+    console.log("clicked create task button");
   },
 
   showErrors: function (task, errors) {

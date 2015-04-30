@@ -4,7 +4,7 @@ APP.TaskRouter = Backbone.Router.extend({
   routes: {
     "task/new": "create",
     "tasks/index": "index",
-    "task/:id/edit": "edit",
+    "task/edit": "edit",
     "task/:id/view": "show"
   },
 
@@ -43,10 +43,19 @@ APP.TaskRouter = Backbone.Router.extend({
     $('#primary-content').html(this.currentView.render().el);
   },
 
-  edit: function (id) {
-    var task = this.tasks.get(id);
-    this.currentView = new APP.TaskEditView({task: task});
+  edit: function () {
+    
+    this.currentView = new APP.TaskNewView({
+      
+      tasks: this.tasks, 
+      task: new APP.TaskModel()
+    
+    });
+
     $('#primary-content').html(this.currentView.render().el);
+    // var task = this.tasks.get(id);
+    // this.currentView = new APP.TaskNewView({task: task});
+    // $('#primary-content').html(this.currentView.render().el);
   },
 
   show: function (id) {
