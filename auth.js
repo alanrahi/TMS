@@ -14,6 +14,7 @@ var dbCollection = 'test';
 var key = 'alan-04212015';
 
 
+
 // New components:
 
 // Allow one route to redirect to another:
@@ -24,12 +25,15 @@ var sendHtml = require("send-data/html"); //may also need send-data/json
 
 // Parse the body of a POST request containing a form:
 var formBody = require("body/form");
+var jsonBody = require("body/json");
 
 // Pre-compile all the templates in directory server-templates/templates
 var templates = require('./compile-templates');
 
 // Allow easy hashing and salting of passwords:
 var pwd = require("pwd");
+
+
  
 // ----- Creating users -----
 //uncomment (and customize) to create a user:
@@ -133,7 +137,7 @@ router.addRoute("/login", {
 				} else { //successful authentication!
 					console.log("authenticated user "+user.name)
 					// respond with the protected content page, plus a welcome message:
-					sendHtml(req, res, templates.index({message: "Welcome, "+user.name+"!"+user.salt}));
+					sendHtml(req, res, templates.index({user: user.name }));
 				}
 			})//authenticate
 		})//formBody
@@ -248,27 +252,86 @@ router.addRoute("/api", {
             //         .fail(handleFailure) 
             // }
     },
+	
 	POST: function(req,res,opts) { // place a new model into db collection
             console.log("Processing POST request...");
-            console.log(JSON.stringify(opts));
+            //console.log(JSON.stringify(opts));
             // The model data is stored in request body; must wait for it...
-			jsonBody(req,res, function saveBody(err,body) { //when body is ready...
-                var key = String(body.key);
-                body.id = key;
-                console.log("Body:");
-                console.log(body);
-				db.put(dbCollectionName,key,body) //promise...
-        		.then(function(result){
-        			res.end(body);
+			jsonBody(req,res, function saveBody(err,body) {
+				if (err) console.log(err);
+				var key = body.username+ "-"+ body.date;
+				console.log(typeof key);
+			 console.log(body);
+			 console.log(dbCollection, typeof dbCollection );
+			 db.put(dbCollection,key,body)
+			 	.then(function(result){
+			 		body.id = key;
+        			res.end(JSON.stringify(body));
         		})
         		.fail(function(err){
             		console.log("err: "+err);
             		res.end();
         		});
+			
 
 			});
-	}
+
+	},		
+
+
+
+	});
+
+router.addRoute("/api/*", {
+
+	PUT: function(req,res,opts) {
+		console.log("Processing Put request...");
+
+			jsonBody(req,res, function saveBody(err,body) {
+				db.put(dbCollection,body.id,body)
+					.then(function(result){
+						res.end(JSON.stringify(body));
+
+					})
+					.fail(function(err){
+	            		console.log("err: "+err);
+	            		res.end();
+        			});
+
+
+
+
+			});
+
+		}
+
+
+
+
+
+
+
 });
+
+
+
+			// jsonBody(req,res, function saveBody(err,body) { //when body is ready...
+   //              var key = String(body.key);
+   //              body.id = key;
+   //              console.log("Body:");
+   //              console.log(body);
+			// 	db.put(dbCollectionName,key,body) //promise...
+   //      		.then(function(result){
+   //      			res.end(body);
+   //      		})
+   //      		.fail(function(err){
+   //          		console.log("err: "+err);
+   //          		res.end();
+   //      		});
+
+			// });
+// 	}
+// });
 
 router.addRoute("/*", st({
 	path: __dirname + "/",
@@ -276,5 +339,5 @@ router.addRoute("/*", st({
 }));
 
 var server = http.createServer(router);
-server.listen(3000);
-console.log("example auth server listening on port 3000");
+server.listen(5000);
+console.log("example auth server listening on port 5000");

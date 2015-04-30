@@ -79,12 +79,11 @@ p {
 
 .tms-slogan {
   font-size: 22px;
-  font-style: italic;
   line-height: 1.0em;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   color: #ffffff;
   padding-left: 10px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Frutiger', sans-serif;
 }
 
 .nav-menu {
@@ -140,6 +139,10 @@ p {
   text-decoration: none;
   font-family: 'Belleza', sans-serif;
   color: #555555;
+}
+
+.nav-a {
+  list-style-type: none;
 }
 
 .btn-green-bg {
@@ -219,7 +222,7 @@ p {
 
 /* Weather */
 .icon {
-  padding: 0 0 0 0;
+  padding: 3px 0 0 0;
   margin: 0 auto -25px auto;
   background-color: #ffffff;
   width: 61px;

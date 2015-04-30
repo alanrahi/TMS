@@ -16,6 +16,8 @@
   <script src="//use.typekit.net/wat4for.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
+  <script type = "text/javascript"> var loggedInuser = "{{user}}"; </script>
+
   <!-- load the libraries we need -->
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.3/zepto.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
@@ -38,7 +40,7 @@
 <nav>
   <div class="nav-div">
     <p class="tms-title">TMS<sup class="tms-tm">&#8482;</sup></p>
-    <p class="tms-slogan">Track your stuff the right way</p> 
+    <p class="tms-slogan">Keep track of your activities and meet your goals.</p> 
   </div> 
 
  
@@ -48,10 +50,11 @@
 
   
   <div class="nav-menu">
-    <ul class="nav-ul">
-      <li class="nav-li"><a href="theTeam.html">the Team</a></li>
-      <li class="nav-li"><a href="theProject.html">the Project</a></li>
-      <li class="nav-li"><a href="">Logout</a></li>
+    <!-- <ul class="nav-ul"> -->
+    <ul>
+      <!-- <li class="nav-li"><a href="theTeam.html">the Team</a></li>
+      <li class="nav-li"><a href="theProject.html">the Project</a></li> -->
+      <li class="nav-a"><a href="" class="edit-btn btn btn-danger btn-small">Logout</a></li>
     </ul>
    </div>  
 </nav>
@@ -101,7 +104,7 @@
         <h1 class="rotate"><%= title %></h1>
 
         <div class="task-buttons">
-          <a href="#task/<%= id %>/edit" class="edit-btn btn btn-danger btn-small">edit</a>
+          <a href="#task/edit" class="edit-btn btn btn-danger btn-small">edit</a>
           <a href="#" class="delete btn btn-danger btn-small">delete</a>
         </div>
       </div>

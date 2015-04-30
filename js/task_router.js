@@ -10,7 +10,11 @@ APP.TaskRouter = Backbone.Router.extend({
 
   initialize: function (options) {
     this.tasks = options.tasks;
-    this.index();
+      var self = this;//save the context of this in a variable
+     this.tasks.fetch({success: function() {
+      self.index();
+     }});
+     
   },
 
   create: function () {
@@ -42,12 +46,11 @@ APP.TaskRouter = Backbone.Router.extend({
   index: function () {
     this.currentView = new APP.TaskIndexView({
       tasks: this.tasks
-    });
-    var self = this; //save the context of this in a variable
-    this.tasks.fetch({ success: function(){
-        $('#primary-content').html(self.currentView.render().el);
 
-    }});
+       
+    });
+    
+    $('#primary-content').html(this.currentView.render().el);
     
     // we would call to the index with
 
