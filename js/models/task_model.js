@@ -14,7 +14,8 @@ APP.TaskModel = Backbone.Model.extend({
     duration: "",
     instance: 0,
     username: loggedInuser, 
-    date: ""
+    date: "",
+    time: ""
     
   },
 

@@ -30,18 +30,19 @@ APP.TaskNewView = Backbone.View.extend({
     console.log('console logging this.task');
     console.log(this.task);
     var date = new Date();
-    var ms = date.getMilliseconds().toString();
+    var time = date.getMilliseconds().toString();
     var month = (date.getMonth()+1).toString();
     var day = date.getDate().toString();
     var year = date.getFullYear().toString();
-    var currentDate = ms+"-"+month+"-"+day+"-"+year;
+    var currentDate = router.getCurrentDate();
     //console.log(currentDate);
     //var currentDate = toString(date.getMonth())+"-"+toString(date.getDate())+"-"+toString(date.getFullYear());
     console.log(currentDate);
     this.task.set({
       title: this.$el.find('input[name=title]').val(),
       duration: this.$el.find('input[name=duration]').val(),
-      date: currentDate
+      date: currentDate,
+      time: time
       //instance: this.$el.find('input[name=instance]').val(),
       // just setting random number for id would set as primary key from server
       //id: Math.floor(Math.random() * 100) + 1

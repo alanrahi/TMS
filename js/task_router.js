@@ -11,10 +11,24 @@ APP.TaskRouter = Backbone.Router.extend({
   initialize: function (options) {
     this.tasks = options.tasks;
       var self = this;//save the context of this in a variable
-     this.tasks.fetch({success: function() {
+
+     var queryString = "username="+ loggedInuser + "&date=" + this.getCurrentDate();
+     this.tasks.fetch({data: queryString, success: function() {
       self.index();
      }});
      
+  },
+
+  getCurrentDate: function() {
+    var date = new Date();
+    var time = date.getMilliseconds().toString();
+    var month = (date.getMonth()+1).toString();
+    var day = date.getDate().toString();
+    var year = date.getFullYear().toString();
+    var currentDate = month+"."+day+"."+year;
+
+    return currentDate;
+
   },
 
   create: function () {

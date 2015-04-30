@@ -2,6 +2,8 @@ var http = require("http");
 var st = require('st');
 var Router = require("routes-router");
 var router = Router();
+var querystring = require('querystring');
+var _ = require('underscore');
 //var fs = require('fs');
 
 //var config = require('./config'); //load the orchestrate key
@@ -179,6 +181,15 @@ router.addRoute("/register", {
 	}
 });
 
+function getKeysFromQueryString(queryStr) {
+    // return the string after "keys="
+    //return queryStr.slice(5);
+    // more versatile:
+    return querystring.decode(queryStr);
+    }
+
+
+
 router.addRoute("/api", {
     // Simulate requests with curl:
     // curl localhost:1337/api              --> returns complete db
@@ -186,16 +197,30 @@ router.addRoute("/api", {
 	GET:  function(req,res,opts) { //return all or part of a collection
 
 			console.log('processing GET req');
-        	db.get(dbCollection, key)
-            .then(function(results){
-                var data = results.body.currentTaskModel; //this will need to revert to results.body and we will drill down on the client side
-                console.log(data);
-                res.end(JSON.stringify(data));
-            })
-            .fail(function(err){
-            console.log("error: "+ err);
+        	
+        	//'value.username: alan AND value.date:4212015'
+
+        	console.log(opts.parsedUrl);
+
+        	var queryObject = getKeysFromQueryString(opts.parsedUrl.query);
+        	var searchString = "value.username:" + queryObject.username + " AND value.date:" + queryObject.date;
+console.log(searchString);
+        		db.newSearchBuilder()
+        			.collection(dbCollection)
+                    .limit(100)
+                    //.sort(','asc')
+                    .query(searchString)
+					.then(function(result){
+                		var data = _.pluck(result.body.results, "value");
+		                console.log(result.body);
+		                console.log(data);
+		                res.end(JSON.stringify(data));
+		            })
+            		.fail(function(err){
             
-       })
+            			console.log("error: "+ err);
+            
+       				})
             // // Handle success:
             // function forwardOrchResults(result) {
             //     //given result obj from Orchestrate db, strip away metadata
@@ -236,13 +261,13 @@ router.addRoute("/api", {
             //     // return subset of db:
             //     //db.search(dbCollectionName, keyStr)
             //     db.get(dbCollectionName, keyStr) 
-            //     // db.newSearchBuilder()
-            //     //     .collection(dbCollectionName)
-            //     //     .limit(100)
-            //     //     .sort('key','asc')
-            //     //     .query(searchStr)
-            //         .then(forwardOrchResults)
-            //         .fail(handleFailure)
+                // // db.newSearchBuilder()
+                //     .collection(dbCollectionName)
+                //     .limit(100)
+                //     .sort('key','asc')
+                //     .query(searchStr)
+                //     .then(forwardOrchResults)
+                //     .fail(handleFailure)
 
 
 
@@ -259,13 +284,18 @@ router.addRoute("/api", {
             // The model data is stored in request body; must wait for it...
 			jsonBody(req,res, function saveBody(err,body) {
 				if (err) console.log(err);
-				var key = body.username+ "-"+ body.date;
-				console.log(typeof key);
+				//var key = body.username+ "-"+ body.date;
+				//console.log(typeof key);
 			 console.log(body);
-			 console.log(dbCollection, typeof dbCollection );
-			 db.put(dbCollection,key,body)
+			 //console.log(dbCollection, typeof dbCollection );
+			 db.post(dbCollection,body)
 			 	.then(function(result){
-			 		body.id = key;
+			 		
+			 		console.log(result.caseless.dict.location);
+			 		var IDstring = result.caseless.dict.location;
+			 		var newID = IDstring.split('/')[3];
+			 		console.log(newID);
+			 		body.id = newID;
         			res.end(JSON.stringify(body));
         		})
         		.fail(function(err){
@@ -288,6 +318,7 @@ router.addRoute("/api/*", {
 		console.log("Processing Put request...");
 
 			jsonBody(req,res, function saveBody(err,body) {
+				console.log(body);
 				db.put(dbCollection,body.id,body)
 					.then(function(result){
 						res.end(JSON.stringify(body));
