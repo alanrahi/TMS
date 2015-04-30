@@ -30,7 +30,7 @@
   <script type="text/javascript" src="../js/views/task_column.js"></script>
   <script type="text/javascript" src="../js/views/task_new.js"></script>
   <script type="text/javascript" src="../js/views/task_edit.js"></script>
-  <!-- <script type="text/javascript" src="js/views/task_show.js"></script>-->
+  <script type="text/javascript" src="../js/animate.js"></script>
 
 
 
@@ -54,36 +54,6 @@
     </ul>
    </div>  
 </nav>
-<script>
-$(function(){
-
-//Add animation -add
-  $('.add').on('click',function(){
-    $('.instances').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-       $(this).removeClass('animated flip')
-    });
-  });
-
-  //Remove animation -remove
-  $('.petitedelete').on('click',function(){
-    $('.instances').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-       $(this).removeClass('animated flip')
-    });
-  });
-
-  $('.tms-title').mouseenter(function(){
-    $(this).addClass('animated infinite bounce').mouseleave('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-       $(this).removeClass('animated infinite bounce')
-       console.log('okay, it worked')
-    });
-
-  })
-});
-</script>
-
-<script>
-</script>
-
 <div class="container-background">
   <div class="container">
     <div class="row">
