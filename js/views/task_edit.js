@@ -24,7 +24,7 @@ APP.TaskEditView = Backbone.View.extend({
       //instance: this.$el.find('input[name=instance]').val()
     });
     // we would save to the server here with
-    // this.task.save();
+    this.task.save();
     // redirect back to the index
     window.location.hash = "tasks/index";
 

@@ -8,7 +8,8 @@ APP.TaskRowView = Backbone.View.extend({
   events: {
     "click a.delete": "destroy",
     "click a.add": "add",
-    "click a.petitedelete": "remove"
+    "click a.petitedelete": "remove",
+    "click a.edit": "edit"
 	 },
 
 
@@ -31,6 +32,14 @@ APP.TaskRowView = Backbone.View.extend({
     console.log(this.task);
     //this.$el.html(_.template($('#rowTemplate').html(), this.task.toJSON()));
     this.$el.html(this.template(this.task.attributes));
+
+    //add a loop that runs through values in updateInstances and for sum of instances render a div
+
+    for (var i=0; i < this.task.get("instance"); i++) {
+      //console.log(instance);
+      this.$('.instances').append('<div class ="instance-div">&nbsp;</div>');
+
+    }
 
     return this;
   },
@@ -58,7 +67,7 @@ APP.TaskRowView = Backbone.View.extend({
     this.$el.remove();
     
     // which would make a DELETE call to the server with the id of the item
-    this.collection.remove(this.task.attributes);
+    this.tasks.remove(this.task);
     
     
 
@@ -95,8 +104,32 @@ APP.TaskRowView = Backbone.View.extend({
             
             
             this.$('.instances > div:first-child').remove();
-            console.log(this);
+            console.log("performing put request");
+            var updatedinstance = this.task.attributes.instance - 1;
+            this.task.set({
+              instance : updatedinstance
+            });
+            this.task.save();
+  },
+
+  edit: function(event) {
+
+
+    console.log(this.task);
+  //         var view = new APP.TaskNewView( {
+           
+          
+    
+        
+    
+  //   this.$el.find("#Tasks").append(view.render().el);
+  
+  // }
+            window.location.hash = "task/:id/edit";
+
+
   }
+
 
 });
 
