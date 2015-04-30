@@ -13,6 +13,8 @@ APP.TaskRowView = Backbone.View.extend({
 
 
 
+
+
   // the constructor
   initialize: function (options) {
     // model is passed through
@@ -50,11 +52,16 @@ APP.TaskRowView = Backbone.View.extend({
     event.preventDefault();
     event.stopPropagation();
     // we would call
-    console.log(this);
-    //this.trigger('destroy');
+    this.trigger('destroy');
+    console.log('removing task from view');
+    console.log(this.task);
+    this.$el.remove();
+    
     // which would make a DELETE call to the server with the id of the item
-    this.collection.remove(this);
-    //this.$el.remove();
+    this.collection.remove(this.task.attributes);
+    
+    
+
   },
   
 
@@ -63,7 +70,13 @@ APP.TaskRowView = Backbone.View.extend({
               
       
             this.$('.instances').append('<div class ="instance-div">&nbsp;</div>');
-            console.log(this);
+            console.log("performing put request");
+            var updatedinstance = this.task.attributes.instance + 1;
+            this.task.set({
+              instance : updatedinstance
+            });
+            console.log(this.task);
+            this.task.save();
 
             
           
