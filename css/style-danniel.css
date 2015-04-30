@@ -8,6 +8,12 @@ body {
 
 p {
   font-family: 'Belleza', sans-serif;
+}
+
+.delete-create-button {
+  font-family: 'Belleza', sans-serif;
+  font-size: 20px;
+  color: #acc;
 } 
 
 .button-shadow {

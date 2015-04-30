@@ -109,7 +109,7 @@ router.addRoute("/logout", {
 
 router.addRoute("/login", {
 	GET: function (req, res, opts) {
-		sendHtml(req, res, templates.login({ message: "Wecome to Track My Stuff."+ "<br>"+ "Get ready to track your tasks like a Rock Star"+"<br>"+ "Please log in"}));	
+		sendHtml(req, res, templates.login({ message: "<h1>Welcome to Track My Stuff.<h1>"+ "\n" + "<h2>Get ready to track your tasks like a Rock Star</h2>"+ "\n" + "<h2>Please log in.</h2>"}));	
 	},
 	
 
@@ -143,7 +143,7 @@ router.addRoute("/login", {
 //------ Register Route -----------/
 router.addRoute("/register", {
 	GET: function (req, res, opts) {
-		sendHtml(req, res, templates.register({ message: "Please Create User Account"}));	
+		sendHtml(req, res, templates.register({ message: "<h1>Please Create User Account</h1"+"\n"}));	
 	},
 	
 
