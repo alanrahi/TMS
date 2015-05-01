@@ -1,14 +1,19 @@
 body {
 	background-color: #e0ffff;
+
 }
 
-/*h1 h2 h3 h4 h5 h6 {
+h1 h2 h3 h4 h5 h6 {
   font-family: 'Orbitron', sans-serif;
-  }*/
+  }
 
 p {
   font-family: 'Belleza', sans-serif;
 } 
+
+.flip {
+  webkit-animation-duration: 50s;
+}
 
 .button-shadow {
       -moz-box-shadow:1px 0px 1px #bbbbbb,
@@ -109,7 +114,10 @@ p {
   font-size: 21px;
   -webkit-transition: .12s;
   transition: .12s;
+  -webkit-animation-duration: 10s;
+   -webkit-animation-delay: 1s;
 } 
+
 
 .nav-li:hover {
   background-color: #e0ffff;
@@ -238,6 +246,66 @@ p {
   padding: 0 0 0 0;
 
 }
+
+.team-social-icon ul li{
+  display: inline-block;
+  float: left;
+  list-style-type: none;
+  padding: 5px 5px 5px 5px;
+}
+
+
+
+.github {
+  background-image: url("../img/github-icon.png");
+  width: 100%;
+}
+
+.github:hover {
+  background-image: url("../img/github-icon-link.png");
+  width: 100%;
+}
+
+
+.team-background {
+  color: #555555;
+  margin: 5px 5px 5px 5px;
+  background:#eeeeee;
+  height: 253px;
+  -moz-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:1px 0px 1px #bbbbbb,
+    0px 1px 1px #dddddd,2px 1px 1px #bbbbbb,
+    1px 2px 1px #dddddd,3px 2px 1px #bbbbbb,
+    2px 3px 1px #dddddd,4px 3px 1px #bbbbbb,
+    3px 4px 1px #dddddd,5px 4px 1px #bbbbbb,
+    4px 5px 1px #dddddd,6px 5px 1px #bbbbbb,
+    8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-background h1 {
+  
+}
+.team-descriptiont p {
+  margin-top: 24px;
+  font-size: 12px;
+  font-size: 1.2em;
+}
+
+
+
 
 /*iPad 3/4 */
 /*@media only screen and (max-width: 768px) {
