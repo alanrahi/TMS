@@ -6,6 +6,7 @@
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
   <link href="../css/style-danniel.css" media="all" rel="stylesheet" type="text/css">
   <link href="../css/styles.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="../css/animate.css" media="all" rel="stylesheet" type="text/css" />
   
   <!-- Fonts Title -->
     <!-- Orbitron -->
@@ -32,6 +33,7 @@
   <script type="text/javascript" src="../js/views/task_new.js"></script>
   <script type="text/javascript" src="../js/views/task_edit.js"></script>
   <!-- <script type="text/javascript" src="js/views/task_show.js"></script>-->
+  <script type="text/javascript" src="../js/animate.js"></script>
 
 
 
@@ -50,14 +52,22 @@
 
   
   <div class="nav-menu">
-    <!-- <ul class="nav-ul"> -->
-    <ul>
-      <!-- <li class="nav-li"><a href="theTeam.html">the Team</a></li>
-      <li class="nav-li"><a href="theProject.html">the Project</a></li> -->
-      <li class="nav-a"><a href="" class="edit-btn btn btn-danger btn-small">Logout</a></li>
+    <ul class="nav-ul">
+<!--     <ul> -->
+      <li class="nav-li" id="theTeam"><button type="button" class="btn btn-tms btn-default">
+        <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>THE TEAM</button></li>
+      <li class="nav-li" id="theTeam"><button type="button" class="btn btn-tms btn-default">
+        <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>THE PROJECT</button></li>
+      <li class="nav-li" id="theTeam"><button type="button" class="btn btn-tms btn-default" href="login.html">
+        <span class="glyphicon glyphicon-chevron-right">&nbsp;</span>LOGOUT</button></li>
+      <!-- <li class="nav-li" id="theProject"><a href="theProject.html">the Project</a></li>
+      <li class="nav-li"><a href="login.html">Logout</a></li>
+      <li class="nav-a"><a href="" class="edit-btn btn btn-danger btn-small">Logout</a></li> -->
     </ul>
    </div>  
 </nav>
+
+<!-- the team section -->
 <div class="container-background">
   <div class="container">
     <div class="row">
@@ -65,6 +75,91 @@
 
       </div>
     </div>
+  </div>
+</div>
+
+<!--- the team section -->
+<div class="fullScreenBackground">
+  <div class="row">
+    <div class="container center-block">
+      <div class="theTeam-nav">
+        <div class="theTeam-nav-close">
+          <button class="theTeam-nav-close-button btn btn-tms btn-default"><strong>X</strong></button>
+        </div>
+      </div>  
+
+
+      <div class="col-md-12 col-sm-12 team-background">
+        <div class="col-md-12 text-center">
+          <h1>THE TEAM</h1>
+          <br>
+        </div>  
+        <div class="col-md-3  text-center">
+          <h2>Tal Zivelin</h2>
+          <img src="../img/Tal_Zivelin_cartoon.jpeg">
+        </div>
+          <div class="col-md-9 team-descriptiont">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit.
+            </p>
+            <div class="team-social-icon">
+              <ul>
+                <li><span class="github"></span><a href=""></a></li>
+                <li><span class="linkedin"><a href=""><i class="glyphicons icon-linked-in"></i></a></li>
+              </ul>  
+          </div>
+        </div>
+      </div> 
+
+      <div class="col-md-12 col-sm-12 team-background">
+        <div class="col-md-3  text-center">
+          <h2>Alan Rahi</h2>
+          <img src="../img/Tal_Zivelin_cartoon.jpeg">
+        </div>
+        <div class="col-md-9 team-descriptiont">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit.
+          </p>
+          <div class="team-social-icon">
+            <ul>
+              <li><span class="github"></span><a href=""></a></li>
+              <li><span class="linkedin"><a href=""></a></li>
+            </ul>  
+        </div> 
+        </div>
+      </div> 
+      
+      <div class="col-md-12 col-sm-12 team-background">
+        <div class="col-md-3  text-center">
+          <h2>Tod Redmond</h2>
+          <img src="../img/Tal_Zivelin_cartoon.jpeg">
+        </div>
+        <div class="col-md-9 team-descriptiont">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit.
+          </p>
+          <div class="team-social-icon">
+            <ul>
+              <li><span class="github"></span><a href=""></a></li>
+              <li><span class="linkedin"><a href=""></a></li>
+            </ul>  
+        </div>  
+        </div>
+      </div> 
+
+      <div class="col-md-12 col-sm-12 team-background">
+        <div class="col-md-3  text-center">
+          <h2>Danniel Rolfe</h2>
+          <img src="../img/Tal_Zivelin_cartoon.jpeg">
+        </div>
+        <div class="col-md-9 team-descriptiont">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus ultrices congue. Fusce mattis aliquam purus, ac tincidunt enim tincidunt at. Vivamus porttitor accumsan auctor. Integer ultrices ante eget sagittis molestie. Curabitur id feugiat elit.
+          </p>
+          <div class="team-social-icon">
+            <ul>
+              <li><span class="github"></span><a href=""></a></li>
+              <li><span class="linkedin"><a href=""></a></li>
+            </ul>  
+        </div>
+      </div> 
+    </div>  
   </div>
 </div>
   <!-- the form, used for create and edit -->
