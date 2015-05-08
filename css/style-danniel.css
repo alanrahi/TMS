@@ -75,6 +75,7 @@ p {
   vertical-align: 35px;
   letter-spacing: -0.05em;
   color: #ffffff;
+  font-family: 'Frutiger', sans-serif;
 }
 
 .tms-slogan {
@@ -90,8 +91,6 @@ p {
     /*width: 60%;*/
     position: absolute;
     top: 105px;
-    /*right: -28%; /*Tal need your help aligning the menue to the bottom div */
-    /*left: 68%; */
     right:63px;
 }
 
@@ -145,12 +144,17 @@ p {
   list-style-type: none;
 }
 
-.btn-tms, .btn-tms:hover, .btn-tms:active {
+.btn-tms {
+  font-family: 'Frutiger', sans-serif;
+  font-size: 16px;
+}
 
+.btn-tms, .btn-tms:hover, .btn-tms:active {
   background: transparent;
   border: 0px solid;
   color: #acc;
-  font-family: 'Belleza', sans-serif;
+  font-family: 'Frutiger', sans-serif;
+  font-size: 16px;
   box-shadow: 0px 0px 0px transparent;
   /* CSS Transition */
   -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
@@ -161,7 +165,12 @@ p {
 }
 
 .theTeam-nav-close-button {
-  font-size: 25px;
+  font-size: 16px;
+  -webkit-transition: color .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: color .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: color .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: color .2s ease-in-out, border .2s ease-in-out;
+  transition: color .2s ease-in-out, border .2s ease-in-out;
 }
 
 .theTeam-nav-close-button:hover {
@@ -172,6 +181,20 @@ p {
   -o-transition: color .2s ease-in-out, border .2s ease-in-out;
   transition: color .2s ease-in-out, border .2s ease-in-out;
 }
+
+.team-background, h1, h2 {
+  color: #acc;
+}
+
+.h1-top {
+  top: -22px;
+}
+
+.team-background, p {
+  color: #555555;
+  padding-bottom: 20px;
+}
+
 .btn:focus,.btn:active, .btn:hover {
    outline: none !important;
    background: transparent;
@@ -286,10 +309,11 @@ p {
 .fullScreenBackground {
   height: 100%;
   width: 100%;
+  padding-bottom: 60%;
   top: 0px;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.99);
-  z-index: 1;
+  z-index: 5;
   padding-top: 25px;
   webkit-animation-duration: 3s;
 }
@@ -305,6 +329,69 @@ p {
 .theTeamClose {
   padding-bottom: 25px;
 }
+
+.rotate {
+  text-transform: capitalize;
+}
+
+.social-icons-ul {
+  margin: auto 35px;
+}
+.social-icons-li {
+  float: left;
+  list-style: none;
+}
+
+#linkedin, a {
+  background: url("../img/linkedin-acc.png"); 
+  width: 35px;
+  height: 35px;
+}
+
+#github, a {
+  background: url("../img/github-acc.png"); 
+  width: 35px;
+  height: 35px;
+}
+
+#email, a{
+  background: url("../img/email-acc.png"); 
+  width: 35px;
+  height: 35px;
+}
+
+#linkedin:hover {
+  background: url("../img/linkedin.png"); 
+  background-repeat: no-repeat;
+}
+
+#github:hover {
+  background: url("../img/github.png"); 
+  background-repeat: no-repeat;
+}
+
+#email:hover {
+  background: url("../img/email.png");
+  background-repeat: no-repeat; 
+}
+
+#email #github #linkedin li a { 
+  margin: 0px; 
+  display: block; 
+  width: 100%; 
+  height: 100%; 
+}
+
+#email, #email:hover, #github, #github:hover, #linkedin, #linkedin:hover button button:active button:focus {
+  border: 0px solid;
+  outline: none !important;
+  -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+  -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
 
 
 

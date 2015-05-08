@@ -1,70 +1,27 @@
 $(document).ready(function(){
 //theTeam
-	for(i = 0; i < 1; i++){
+	// for(i = 0; i < 1; i++){
 		$('.fullScreenBackground').hide();
-    };
+    // };
 
 //on click load team information  
     $('#theTeam').on('click', function(){
 	  	console.log("Clicked, load information about team");
       //this shows the div
-	  	$('.fullScreenBackground').show();
-      $('#primary-content').hide();
-
-    	// $('.fullScreenBackground').removeClass('fadeOut');
-	  	$('.fullScreenBackground').addClass('animated fadeIn').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-         $(this).removeClass('animated fadeIn')
-      });
+	  	$('.fullScreenBackground').fadeIn();
    	});
 
 //on click load team information 
     $('.theTeam-nav-close-button').on('click', function() {
-      $('.fullScreenBackground').hide(); 
-      $('#primary-content').show();
+      $('.fullScreenBackground').fadeOut(); 
+    });  
 
-     $('.theTeam-nav-close-button').mouseenter('.fullScreenBackground').addClass('animated fadeOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-         $(this).removeClass('animated fadeOut')
-         
-      }); 
-    });
 
-// //Add animation -add
-//   $('.add').on('click',function(){
-//     $('.instances').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-//        $(this).removeClass('animated flip')
-//     });
-//   });
+//close button animateion
+$('.theTeam-nav-close').mouseenter(function(){ $('.theTeam-nav-close-button').addClass('animated infinite tada')
+console.log('mouseenter') });
 
-//   //Remove animation -remove
-//   $('.petitedelete').on('click',function(){
-//     $('.instances').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-//        $(this).removeClass('animated flip')
-//     });
-//   });
+$('.theTeam-nav-close').mouseleave(function(){ $('.theTeam-nav-close-button').removeClass('animated infinite tada')
+console.log('mouseleave') });
 
-// //Animate the title 
-//   $('.tms-title').mouseenter(function(){
-//     $(this).addClass('animated infinite bounce').mouseleave('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-//        $(this).removeClass('animated infinite bounce')
-//        console.log('okay, it worked')
-//     });
-
-//   });
-// //body animation 
-//   $('.nav-li').on('click', function(){
-//     $('body').addClass('animated flip').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend', function(){
-//        $(this).removeClass('animated flip')
-//        console.log('okay, it worked')
-//     });
-
-// //body callback
-// body.addEventListener( 
-//      'webkitTransitionEnd', 
-//      function( event ) { 
-//          console.log( "Finished transition!" ); 
-//      }, false );    
-
-//   });
-
-  
 });// /function 
